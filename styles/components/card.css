@@ -1,0 +1,7 @@
+.movie-card{
+    background-color: var(--card-background-color);
+    color: var(--card-text-color);
+    width: fit-content;
+    width: fit-content;
+    max-width: 300px;
+}

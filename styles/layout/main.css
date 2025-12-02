@@ -1,0 +1,12 @@
+/* Section Trending */
+
+.trending{
+    position: absolute;
+    justify-self: center;
+    top: 60vh;
+    width: 80%;
+    height: fit-content;
+    background-color: var( --section-background-color);
+    padding: 20px;
+    border-radius: 25px;
+}
