@@ -1,7 +1,33 @@
-.movie-card{
-    background-color: var(--card-background-color);
-    color: var(--card-text-color);
-    width: fit-content;
-    width: fit-content;
-    max-width: 300px;
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: sans-serif;
+    margin: 10px;
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    max-height: 350px; 
+    object-fit: cover;
+    display: block;
+}
+
+.movie-card h3 {
+    font-size: 1.1rem;
+    margin: 15px;
+    color: #333;
+}
+
+.movie-card p {
+    margin: 0 15px 15px 15px;
+    color: #777;
+    font-size: 0.9rem;
+    overflow-wrap: break-word;
 }

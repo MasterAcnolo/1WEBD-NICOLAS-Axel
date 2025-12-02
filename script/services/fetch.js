@@ -1,26 +1,28 @@
 const API_KEY = "75e5b4eb"
 
 // TYPE sera soit ID soit KEYWORDS. ID fera une recherche sur l'ID, et KEYWORDS une recherche via mot clés
-async function fetchMovies(API_KEY, TYPE, ARGS) { // Je voulais séparer QUERY et ID mais ARGS suffit, il sera toujours présent et suffit
+async function fetchMovies(TYPE, ARGS) { // Je voulais séparer QUERY et ID mais ARGS suffit, il sera toujours présent et suffit
     const BASE_URL = `http://www.omdbapi.com/?type=movie&apikey=${API_KEY}`
-    var URL = BASE_URL
+    let URL = BASE_URL
+
+    const ENCODED_ARGS = encodeURIComponent(ARGS); // Encoder l'URL convertir les caractères spéciaux en paramtères recevable par l'URL, en gros: sécu
 
     if (TYPE == "KEYWORDS"){
-        URL += `&s="${ARGS}"`
+        URL += `&s=${ENCODED_ARGS}`
     } else if (TYPE == "ID"){
-        URL += `&i="${ARGS}`
+        URL += `&i=${ENCODED_ARGS}`
     } else {
         throw new Error("TYPE invalide");
     }
 
     try {
-        const res = await fetch(URL);
+        const reponse = await fetch(URL);
 
-        if (!res.ok) {
-            throw new Error("Erreur HTTP " + res.status);
+        if (!reponse.ok) {
+            throw new Error("Erreur HTTP " + reponse.status);
         }
 
-        const data = await res.json();
+        const data = await reponse.json();
         return data;
 
     } catch (err) {
@@ -28,9 +30,5 @@ async function fetchMovies(API_KEY, TYPE, ARGS) { // Je voulais séparer QUERY e
         return null;
     }
 }
-
-// var movies = await fetchMovies(API_KEY, "KEYWORDS", "Fast+And+Furious")
-
-// console.log(movies)
 
 export {fetchMovies}
