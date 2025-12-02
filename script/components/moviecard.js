@@ -1,0 +1,3 @@
+function movieCard(data){
+    
+}

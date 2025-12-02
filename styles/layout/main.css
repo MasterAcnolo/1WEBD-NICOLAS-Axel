@@ -1,9 +1,8 @@
 /* Section Trending */
 
 .trending{
-    position: absolute;
-    justify-self: center;
-    top: 60vh;
+    position: relative;
+    justify-self: center;   
     width: 80%;
     height: fit-content;
     background-color: var( --section-background-color);
