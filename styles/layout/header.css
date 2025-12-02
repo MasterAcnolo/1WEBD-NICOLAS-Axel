@@ -1,0 +1,61 @@
+header{
+    background-color: rgb(50, 50, 50);
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 50%;
+    justify-self: center;
+    margin-top: 10px;
+}
+
+.left{
+    font-family: Bebas Neue;
+    display: flex;   
+    align-items: center;
+    gap: 10px;
+}
+
+.left img{
+    width: 80px;
+    height: 80px;
+}
+
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 10px;
+}
+
+.searchInput {
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background-color: rgb(229, 229, 229);
+    color: rgb(44, 44, 44);
+}
+
+.searchBtn {
+    background: rgb(229, 229, 229);
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.searchBtn img {
+    width: 20px;
+    height: 20px;
+}
+
+.searchBtn:hover {
+    background: rgb(100, 100, 100);
+}
