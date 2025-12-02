@@ -10,9 +10,10 @@
 /* Components */
 @import url(components/button.css);
 
-/* *{
-    outline: solid red 2px;
-} */
+*{
+    /* outline: solid red 2px; */
+    transition: all 0.2s ease;
+}
 
 html{
     scroll-behavior: smooth;  
