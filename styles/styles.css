@@ -10,6 +10,7 @@
 /* Components */
 @import url(components/button.css);
 @import url(components/card.css);
+@import url(components/loader.css);
 
 *{
     /* outline: solid red 2px; */
