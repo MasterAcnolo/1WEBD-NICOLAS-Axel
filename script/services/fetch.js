@@ -1,5 +1,6 @@
 const API_KEY = "75e5b4eb"
 const DATE = new Date();
+import giveLetter from "../helpers/random.js";
 const utcYear = DATE.getFullYear() + 1;
 
 // TYPE sera soit ID soit KEYWORDS. ID fera une recherche sur l'ID, et KEYWORDS une recherche via mot clés
@@ -20,7 +21,7 @@ async function fetchMovies(TYPE, ARGS, YEAR = 2025, PAGE = 1) { // Je voulais s�
         if(YEAR > utcYear || PAGE <= 0){
             throw new Error("L'année et/ou la page sont incorrectes")
         } else{
-            URL += `&s=movie&y=${YEAR}&page=${PAGE}`
+            URL += `&s=${giveLetter(3)}&y=${YEAR}&page=${PAGE}`
         }
         
     }else {

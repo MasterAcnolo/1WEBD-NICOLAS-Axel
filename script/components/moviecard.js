@@ -23,7 +23,7 @@ export default function generateMovieCard(data, limit) {
 
        
         htmlContent += `
-            <div class="movie-card" data-aos="fade-up">
+            <div class="movie-card">
                 <img src="${image}" alt="${altText}" onerror="this.src='../../assets/notfound.png'"> 
                 <h3>${film.Title}</h3>
                 <p>${film.Year}</p>

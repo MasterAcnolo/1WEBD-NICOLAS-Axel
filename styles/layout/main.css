@@ -14,6 +14,7 @@
     justify-content: center;
     gap: 20px;
     margin-top: 50px;
+    z-index: 5;
 }
 
 .trending{
@@ -27,7 +28,7 @@
 #trending-container, #discover-container{
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
