@@ -2,13 +2,14 @@ header{
     background-color: var( --section-background-color);
     display: flex;
     width: 100%;
-    height: 12vh;
+    height: 11vh;
+    border-radius: 5px;
     justify-content: space-around;
-    position: sticky;
-    top: 0;
+    position: fixed;
+    top: 0px;
     justify-self: center;
     align-items: center;
-    z-index: 2;
+    z-index: 50;
     font-family: Bebas Neue;
 }
 
@@ -66,6 +67,13 @@ header{
     background: rgb(100, 100, 100);
 }
 
+/* Settings custom pour l'index */
+
+.searchBar.indexSearchBar .searchInput{
+    font-size: 1.3em;
+    padding: 10px 60px 10px 10px;
+}
+
 /* Lien Nav */
 
 header nav{
@@ -73,10 +81,49 @@ header nav{
     align-items: center;
     height: fit-content;
     gap: 24px;
-    font-size: 1.8em;
+    font-size: 1.5em;
 }
 
 header nav a{
     color: var(--default-text-color);
     text-decoration: none;
+}
+
+@media (max-width: 823px) {
+    header nav{
+        font-size: 1.3em;
+    }
+
+    .left img{
+        width: 40px;
+        height: 40px;
+    }
+
+    .left{
+        font-size: 0.8em;
+    }
+
+    .searchInput {
+        font-size: 0.7em;
+    }
+
+    .searchBtn img {
+        width: 15px;
+        height: 15px;
+    }
+
+}
+
+/* En Dessous c'est tablette + Tel */
+@media (max-width: 768px) {
+    *{
+        outline: solid green 5px;
+    }
+
+
+}
+
+/*Telephone*/
+@media (max-width: 481px) {
+
 }
