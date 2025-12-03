@@ -29,7 +29,6 @@ async function fetchMovies(TYPE, ARGS, YEAR = 2025, PAGE = 1) { // Je voulais s√
 
     try {
         const reponse = await fetch(URL);
-        console.log(URL)
 
         if (!reponse.ok) {
             throw new Error("Erreur HTTP " + reponse.status);

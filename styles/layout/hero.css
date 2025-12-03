@@ -8,7 +8,6 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    z-index: -1;
 }
 
 /* L’overlay */
@@ -23,12 +22,18 @@
 
 /* Le contenu doit passer AU-DESSUS du shadow */
 .hero * {
-    position: relative;
-    z-index: 2;
+    z-index: 3;
+}
+
+.hero a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-top: 20vh;
 }
 
 .hero h3 {
     font-family: Montserrat;
     font-size: 2.5rem;
     color: white;
+    margin-top: 20vh;
 }

@@ -1,0 +1,23 @@
+.scrollHint {
+    position: absolute;
+    display: inline-block;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    overflow: auto;
+    animation: bounce 1s infinite ease-in-out;
+}
+
+.arrow {
+    font-size: 2.5rem;
+    color: white;
+
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+}
