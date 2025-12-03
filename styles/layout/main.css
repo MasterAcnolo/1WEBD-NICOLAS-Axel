@@ -7,13 +7,16 @@
     justify-content: center;
     width: 80%;
     height: fit-content;
-    background-color: var( --section-background-color);
     padding: 20px;
     border-radius: 25px;
     justify-content: center;
     gap: 20px;
     margin-top: 50px;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
+}
+
+.trending{
+    background-color: var( --section-background-color);
 }
 
 #trending-container, #discover-container{

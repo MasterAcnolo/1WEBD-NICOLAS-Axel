@@ -7,9 +7,10 @@ const trendingContainer = document.getElementById("trending-container");
 const discoverContainer = document.getElementById("discover-container");
 
 const max = getMaxBySize(300);
+let page = 2 // Page par défaut pour discover
 
 function trendingMovies(){
-    fetchMovies("KEYWORDS", "Fast & Furious")
+    fetchMovies("YEAR", "NONE" ,"2025", "1") // l'argument "NONE" est essentiel, sinon ça décale tout
         .then((data) => {
 
             const trendingMovies = generateMovieCard(data, max); 
@@ -22,12 +23,28 @@ function trendingMovies(){
         });
 };
 
+function discoverMovies(page){
+    fetchMovies("YEAR", "NONE" ,"2025", page)
+        .then((data) => {
+
+            const discoverMovies = generateMovieCard(data, max); 
+            console.log(discoverMovies)
+
+            discoverContainer.innerHTML = discoverMovies;
+        
+        })
+        .catch((error) => {
+            console.error("Erreur pendant le parsing :", error);
+        });
+
+}
+
 document.addEventListener("DOMContentLoaded", function(){
 
     if(!trendingContainer || !discoverContainer){
         console.error("HTML Manquant ou incomplet");
     } else{ 
         trendingMovies();
-        discoverMovies();
+        discoverMovies(page);
     };
 });
