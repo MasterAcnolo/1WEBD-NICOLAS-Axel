@@ -2,6 +2,8 @@
 /* Section Trending */
 
 .trending, .discover{
+    display: flex;
+    flex-direction: column;
     position: relative;
     justify-self: center; 
     justify-content: center;
