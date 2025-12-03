@@ -10,8 +10,9 @@ Bebas Neue
     --default-text-color: #f1f1f1;
     --default-background-color: linear-gradient(to right, #1a1a1a, #2c2c2c);
 
-    --section-background-color: rgba(28, 27, 27, 0.856);
+    --section-background-color: rgba(57, 57, 57, 0.856);
 
-    --card-background-color: rgb(198, 198, 198);
+    --card-background-color: rgb(28, 28, 28);
     --card-text-color: #f1f1f1;
+    --card-subtitle-text-color: #9e9e9e;
 }

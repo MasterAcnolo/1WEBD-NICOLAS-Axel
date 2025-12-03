@@ -11,7 +11,7 @@
     <link rel="icon" href="assets/icon/icon.png">
 </head>
 <body>
-    <header>
+    <header data-aos="fade-down">
         <div class="left">
             <img src="assets/icon/icon.png">
             <h1> Movie Loader </h1>
@@ -25,29 +25,30 @@
 
     </header>
 
-    <section class="hero">
-        <!-- <img src="assets/background.jpg"> -->
-
-        <h3> What are you going to watch tonight ? </h3>
+    <section class="hero" >
+        <h3 data-aos="zoom-in"> What are you going to watch tonight ? </h3>
     </section>
 
     <main>
-        <section class="trending" id="trending">
+        <section class="trending" id="trending" data-aos="fade-up">
 
             <h2> Trendings Movies </h2>
             
-            <div class="swiper">
-                <div class="swiper-wrapper" id="trending-container">
-                    <!-- movie-card générées ici deviennent des swiper-slide -->
-                </div>
-            </div>
+            <div id="trending-container"></div>
 
+        </section>
+
+        <section class="discover" id="discover" data-aos="fade-up">
+
+            <h2> Discover </h2>
+
+            <div id="discover-container" class="discover-container"></div>
         </section>
 
 
     </main>
 
-    <footer>
+    <footer data-aos="fade-up">
         <div class="top-side">
             <div class="logo-side">
                 <img src="assets/icon/icon.png">

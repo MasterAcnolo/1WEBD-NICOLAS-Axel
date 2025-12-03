@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 240px;
-    background-color: #fff;
+    background-color: var(--card-background-color);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -22,12 +22,12 @@
 .movie-card h3 {
     font-size: 1.1rem;
     margin: 15px;
-    color: #333;
+    color: var(--card-text-color);
 }
 
 .movie-card p {
     margin: 0 15px 15px 15px;
-    color: #777;
+    color: var(--card-subtitle-text-color);
     font-size: 0.9rem;
     overflow-wrap: break-word;
 }
