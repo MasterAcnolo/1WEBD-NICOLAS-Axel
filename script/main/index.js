@@ -11,7 +11,7 @@ const max = getMaxBySize(300);
 let page = 2 // Page par défaut pour discover
 
 function trendingMovies(){
-    fetchMovies("YEAR", "NONE" ,"2025", "1") // l'argument "NONE" est essentiel, sinon ça décale tout
+    fetchMovies("KEYWORDS", "Movie")
         .then((data) => {
 
             const trendingMovies = generateMovieCard(data, max); 
@@ -28,7 +28,7 @@ function discoverMovies(page){
 
     const div = document.createElement("div");
 
-    fetchMovies("YEAR", "NONE" ,"2025", page)
+    fetchMovies("YEAR", "comedy", page)
         .then((data) => {
 
             const discoverMovies = generateMovieCard(data, max); 

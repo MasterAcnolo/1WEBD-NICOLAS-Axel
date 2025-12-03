@@ -1,10 +1,9 @@
 const API_KEY = "75e5b4eb"
 const DATE = new Date();
-import giveLetter from "../helpers/random.js";
 const utcYear = DATE.getFullYear() + 1;
 
 // TYPE sera soit ID soit KEYWORDS. ID fera une recherche sur l'ID, et KEYWORDS une recherche via mot clés
-async function fetchMovies(TYPE, ARGS, YEAR = 2025, PAGE = 1) { // Je voulais séparer QUERY et ID mais ARGS suffit, il sera toujours présent et suffit
+async function fetchMovies(TYPE, ARGS, PAGE = 1,YEAR = 2025) { // Je voulais séparer QUERY et ID mais ARGS suffit, il sera toujours présent et suffit
     const BASE_URL = `http://www.omdbapi.com/?type=movie&apikey=${API_KEY}`
     let URL = BASE_URL
 
@@ -21,12 +20,14 @@ async function fetchMovies(TYPE, ARGS, YEAR = 2025, PAGE = 1) { // Je voulais s�
         if(YEAR > utcYear || PAGE <= 0){
             throw new Error("L'année et/ou la page sont incorrectes")
         } else{
-            URL += `&s=${giveLetter(3)}&y=${YEAR}&page=${PAGE}`
+            URL += `&s=${ARGS}&page=${PAGE}`
         }
         
     }else {
         throw new Error("Erreur d'arguments");
     }
+
+    console.log(URL)
 
     try {
         const reponse = await fetch(URL);
