@@ -1,14 +1,18 @@
 header{
     background-color: var( --section-background-color);
-    border-radius: 15px;
     display: flex;
-    justify-content: space-between;
-    position: absolute;
-    width: 50%;
+    width: 100%;
+    height: 12vh;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
     justify-self: center;
-    margin-top: 10px;
+    align-items: center;
     z-index: 2;
+    font-family: Bebas Neue;
 }
+
+/* Logo + Nom */
 
 .left{
     font-family: Bebas Neue;
@@ -23,6 +27,7 @@ header{
 }
 
 
+/* Barre de Recherche */
 .searchBar {
     display: flex;
     align-items: center;
@@ -59,4 +64,19 @@ header{
 
 .searchBtn:hover {
     background: rgb(100, 100, 100);
+}
+
+/* Lien Nav */
+
+header nav{
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    gap: 24px;
+    font-size: 1.8em;
+}
+
+header nav a{
+    color: var(--default-text-color);
+    text-decoration: none;
 }
