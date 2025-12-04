@@ -28,10 +28,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 hamburgerMenu.classList.add("active");
                 hamburgerOverlay.classList.add("active");
                 hamburgerIcon.src = "../../assets/icon/cross.png";
+                document.body.style.overflow = "hidden";
             } else {
                 hamburgerMenu.classList.remove("active");
                 hamburgerOverlay.classList.remove("active");
                 hamburgerIcon.src = "../../assets/icon/hamburger.png";
+                document.body.style.overflow = "auto";
             }
 
             // fade in
