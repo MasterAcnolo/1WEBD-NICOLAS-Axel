@@ -69,9 +69,25 @@ header{
 
 /* Settings custom pour l'index */
 
-.searchBar.indexSearchBar .searchInput{
+.searchBar.indexSearchBar .searchSearchBar .searchInput{
     font-size: 1.3em;
     padding: 10px 60px 10px 10px;
+}
+
+.searchSearchBar{
+    position: absolute;
+    z-index: 9;
+    justify-self: center;
+    top: 30vh;
+}
+
+.searchSearchBar .searchInput{
+    padding: 15px 500px 15px 10px;
+}
+
+.searchSearchBar .searchBtn img {
+    width: 30px;
+    height: 30px;
 }
 
 /* Lien Nav */

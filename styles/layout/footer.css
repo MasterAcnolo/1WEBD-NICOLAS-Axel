@@ -3,6 +3,8 @@ footer{
     flex-direction: column;
     font-family: Poppins;
     margin-top: 40px;
+    top: 0%;
+    margin-top: auto; 
 }
 
 .top-side{
@@ -63,7 +65,7 @@ footer p{
     align-self: center;
 }
 
-@media (max-width: 768px){
+@media (max-width: 860px){
     .top-side{
         flex-direction: column;
         align-items: center;
@@ -80,4 +82,36 @@ footer p{
     footer hr{
         width: 80%;
     }
+
+    .logo-side h4{
+        text-align: start;
+    }
+
+    .logo-side{
+        gap: 10px;
+}   
+}
+
+@media (max-width: 444px){
+
+    .logo-side .text p{
+        font-size: 0.8em;
+    }
+
+    .logo-side .text h4{
+        font-size: 1em;
+    }
+
+}
+
+@media (max-width: 369px){
+
+    .logo-side .text p{
+        font-size: 0.7em;
+    }
+
+    footer p{
+        font-size: 0.8em;
+    }
+
 }

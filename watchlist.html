@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchlist</title>
+
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" >
+
+    <link rel="icon" href="assets/icon/icon.png">
+</head>
+
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+    
+    <header data-aos="fade-down">
+        <div class="left">
+            <img src="assets/icon/icon.png">
+            <h1> Movie Loader </h1>
+        </div>
+
+        <nav>
+            <a href="index.html" class="link">Home</a>
+            <a href="search.html" class="link" >Search</a>
+            <a href="watchlist.html" class="link disabled">Watchlist</a>
+        </nav>
+
+        <img src="assets/icon/hamburger.png" id="hamburger-button" style="display: none;">
+
+        <div class="hamburger-overlay" id="hamburger-overlay"></div>
+
+        <div class="hamburger-menu" id="hamburger-menu">
+            <a href="" class="link">Home</a>
+            <a href="search.html" class="link disabled" >Search</a>
+            <a href="watchlist.html" class="link disabled">Watchlist</a>
+        </div>
+
+    </header>
+
+    <main>
+
+    </main>
+
+    <footer data-aos="fade-up">
+        <div class="top-side">
+            <div class="logo-side">
+                <img src="assets/icon/icon.png">
+                <div class="text">
+                    <h4> Movie Loader </h4>
+                    <p> What are you going to watch tonight ?</p>
+                </div>
+            </div>
+
+            <div class="link-side">
+                <h4> Site </h4>
+                <a href="index.html" class="link"> Home </a>
+                <a href="index.html" class="link"> Search </a>
+                <a href="watchlist.html" class="link"> Watchlist </a>
+            </div>
+        </div>
+
+        <hr>
+
+        <p> © 2025 Movie Loader - All rights reserved</p>
+    </footer>
+    
+
+    <script type="module" src="script/common.js"></script>
+    <script src="script/components/hamburger.js"> </script>
+    <script src="script/helpers/loader.js"></script>
+    <script type="module" src="script/main/search.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+</body>
+</html>
