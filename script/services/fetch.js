@@ -45,8 +45,6 @@ async function fetchMovies(TYPE, ARGS = "", PAGE = 1, YEAR = 2025) {
         throw new Error("Erreur d'arguments");
     }
 
-    console.log("TMDb URL:", URL);
-
     try {
         const response = await fetch(URL);
         if (!response.ok) {
