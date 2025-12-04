@@ -31,3 +31,11 @@
     font-size: 0.9rem;
     overflow-wrap: break-word;
 }
+
+@media (max-width: 1000px) {
+    .movie-card{
+        width: 200px;
+    }
+
+
+}

@@ -13,9 +13,9 @@ function manageCardLayout(){
     let size;
 
     if(pageWidth < 600){
-        size = 50; // mobile
+        size = 100; // mobile
     } else if(pageWidth < 1024){
-        size = 250; // tablette
+        size = 225; // tablette
     } else {
         size = 250; // pc
     }
