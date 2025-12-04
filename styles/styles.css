@@ -44,3 +44,9 @@ body{
     transform: scale(1.05);
     text-decoration: underline;
 }
+
+/* Lien Désactivé */
+.disabled{
+    pointer-events: none;
+    color: rgb(152, 152, 152) !important;
+}
