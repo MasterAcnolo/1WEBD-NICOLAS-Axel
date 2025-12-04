@@ -116,9 +116,6 @@ header nav a{
 
 /* En Dessous c'est tablette + Tel */
 @media (max-width: 768px) {
-    *{
-        outline: solid green 2px;
-    }
 
     header nav *{
         display: none;
@@ -128,11 +125,6 @@ header nav a{
 
 /*Telephone*/
 @media (max-width: 481px) {
-
-    *{
-        outline: solid rgb(128, 0, 0) 2px;
-    }
-
 
     .searchBar.indexSearchBar .searchInput{
         font-size: 0.9em;
