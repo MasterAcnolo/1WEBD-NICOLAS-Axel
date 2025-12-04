@@ -7,7 +7,23 @@ const trendingContainer = document.getElementById("trending-container");
 const discoverContainer = document.getElementById("discover-container");
 const loadMoreButton = document.getElementById("load-more");
 
-const max = getMaxBySize(300);
+
+function manageCardLayout(){
+    const pageWidth = window.innerWidth;
+    let size;
+
+    if(pageWidth < 600){
+        size = 50; // mobile
+    } else if(pageWidth < 1024){
+        size = 250; // tablette
+    } else {
+        size = 250; // pc
+    }
+
+    return size
+}
+
+const max = getMaxBySize(manageCardLayout());
 
 function trendingMovies() {
     fetchMovies("TRENDING")
@@ -27,7 +43,7 @@ async function discoverMovies() {
     div.style.display = "flex";
     div.style.flexWrap = "wrap";
 
-    div.innerHTML = generateMovieCard({ results: movies }, movies.length);
+    div.innerHTML = generateMovieCard({ results: movies }, movies.length); // { results: movies } faut envoyer ça pour cet API
     discoverContainer.appendChild(div);
 }
 
