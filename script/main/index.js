@@ -21,7 +21,7 @@ function trendingMovies() {
 }
 
 async function discoverMovies() {
-    const movies = await getDiscoverMovies(max); // On prend 20 films du buffer
+    const movies = await getDiscoverMovies(max);
 
     const div = document.createElement("div");
     div.style.display = "flex";
