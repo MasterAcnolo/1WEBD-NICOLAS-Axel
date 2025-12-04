@@ -2,7 +2,7 @@ import { fetchMovies } from "../services/fetch.js";
 
 let discoverBuffer = [];
 let discoverPage = 1; // Page TMDb
-const DISCOVER_CHUNK = 20; // Nombre de films à afficher à chaque fois
+const DISCOVER_CHUNK = 20; // Nombre de films max par page
 
 // Remplit le buffer avec des films TMDb tant qu'on a pas assez
 async function fillDiscoverBuffer() {
