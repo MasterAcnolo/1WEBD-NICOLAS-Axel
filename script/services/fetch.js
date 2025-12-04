@@ -1,42 +1,59 @@
-const API_KEY = "75e5b4eb"
+import { API_KEY } from "../APIKEY.js";
 const DATE = new Date();
-const utcYear = DATE.getFullYear() + 1;
+const UTCYEAR = DATE.getFullYear() + 1;
+
+const BASE_URL = "https://api.themoviedb.org/3";
+
 
 // TYPE sera soit ID soit KEYWORDS. ID fera une recherche sur l'ID, et KEYWORDS une recherche via mot clés
-async function fetchMovies(TYPE, ARGS, PAGE = 1,YEAR = 2025) { // Je voulais séparer QUERY et ID mais ARGS suffit, il sera toujours présent et suffit
-    const BASE_URL = `http://www.omdbapi.com/?type=movie&apikey=${API_KEY}`
-    let URL = BASE_URL
+async function fetchMovies(TYPE, ARGS = "", PAGE = 1, YEAR = 2025) {
+    let URL = "";
+    const ENCODEDARGS = encodeURIComponent(ARGS);
 
-    const ENCODED_ARGS = encodeURIComponent(ARGS); // Encoder l'URL convertir les caractères spéciaux en paramtères recevable par l'URL, en gros: sécu
-
-    if (TYPE == "KEYWORDS"){
-        URL += `&s=${ENCODED_ARGS}`
-
-    } else if (TYPE == "ID"){
-        URL += `&i=${ENCODED_ARGS}`
-
-    } else if (TYPE == "YEAR"){
-
-        if(YEAR > utcYear || PAGE <= 0){
-            throw new Error("L'année et/ou la page sont incorrectes")
-        } else{
-            URL += `&s=${ARGS}&page=${PAGE}`
-        }
+    if (TYPE === "KEYWORDS") {
+        URL = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${ENCODEDARGS}&page=${PAGE}&language=en-US`;
+    
         
-    }else {
+    } else if (TYPE === "TRENDING") {
+        // tendances du jour
+        URL = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&language=en-US&page=${PAGE}`;
+
+
+    } else if (TYPE === "DISCOVER") {
+        URL = `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&page=${PAGE}`;
+
+
+    }else if (TYPE === "POPULAR") {
+        // films populaires
+        URL = `${BASE_URL}/movie/popular?api_key=${API_KEY}&language=en-US&page=${PAGE}`;
+    
+        
+    } else if (TYPE === "ID") {
+        URL = `${BASE_URL}/movie/${ENCODEDARGS}?api_key=${API_KEY}&language=en-US`;
+
+
+    } else if (TYPE === "YEAR") {
+        if (YEAR > UTCYEAR || PAGE <= 0) {
+            throw new Error("L'année et/ou la page sont incorrectes");
+
+        } else{
+            URL = `${BASE_URL}/discover/movie?api_key=${API_KEY}&primary_release_year=${YEAR}&page=${PAGE}&language=en-US`;
+        }
+
+    
+    } else {
         throw new Error("Erreur d'arguments");
     }
 
-    console.log(URL)
+    console.log("TMDb URL:", URL);
 
     try {
-        const reponse = await fetch(URL);
-
-        if (!reponse.ok) {
-            throw new Error("Erreur HTTP " + reponse.status);
+        const response = await fetch(URL);
+        if (!response.ok) {
+            throw new Error("Erreur HTTP " + response.status);
         }
 
-        const data = await reponse.json();
+        const data = await response.json();
         return data;
 
     } catch (err) {
@@ -45,4 +62,4 @@ async function fetchMovies(TYPE, ARGS, PAGE = 1,YEAR = 2025) { // Je voulais sé
     }
 }
 
-export {fetchMovies}
+export { fetchMovies };
