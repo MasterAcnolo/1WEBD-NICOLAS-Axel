@@ -37,3 +37,11 @@
     color: white;
     margin-top: 20vh;
 }
+
+@media (max-width: 481px) {
+
+  .hero h3{
+    font-size: 2em;
+  }
+ 
+}

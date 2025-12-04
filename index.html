@@ -22,16 +22,37 @@
             <h1> Movie Loader </h1>
         </div>
 
-       
-        <div class="searchBar">
+        <!-- <div class="searchBar indexSearchBar">
             <input type="text" placeholder="Search a movie..." class="searchInput">
             <button class="searchBtn"> <img src="assets/icon/search.svg"></button>
+        </div> -->
+
+        <nav>
+            <a href="#" class="link disabled">Home</a>
+            <a href="" class="link">Search</a>
+            <a href="" class="link">Watchlist</a>
+        </nav>
+
+        <img src="assets/icon/hamburger.png" id="hamburger-button" style="display: none;">
+
+        <div class="hamburger-overlay" id="hamburger-overlay"></div>
+
+        <div class="hamburger-menu" id="hamburger-menu">
+            <a href="#" class="link disabled">Home</a>
+            <a href="" class="link">Search</a>
+            <a href="" class="link">Watchlist</a>
         </div>
 
     </header>
 
     <section class="hero" >
         <h3 data-aos="zoom-in"> What are you going to watch tonight ? </h3>
+
+        <div class="searchBar indexSearchBar" data-aos="zoom-in">
+            <input type="text" placeholder="Search a movie..." class="searchInput">
+            <button class="searchBtn"> <img src="assets/icon/search.svg"></button>
+        </div>
+        
     
         <a href="#trending" class="scrollHint">
                 <span class="arrow">⌄</span>
@@ -71,8 +92,8 @@
 
             <div class="link-side">
                 <h4> Site </h4>
-                <a href="index.html"> Home </a>
-                <a href="index.html"> Search </a>
+                <a href="index.html" class="link"> Home </a>
+                <a href="index.html" class="link"> Search </a>
             </div>
         </div>
 
@@ -83,6 +104,7 @@
     
 
     <script type="module" src="script/common.js"></script>
+    <script src="script/components/hamburger.js"> </script>
     <script src="script/helpers/loader.js"></script>
     <script type="module" src="script/main/index.js"></script>
 

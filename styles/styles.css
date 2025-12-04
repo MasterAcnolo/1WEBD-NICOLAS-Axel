@@ -3,6 +3,7 @@
 
 /* Layout */
 @import url(layout/header.css);
+@import url(layout/hamburger.css);
 @import url(layout/hero.css);
 @import url(layout/main.css);
 @import url(layout/footer.css);
@@ -31,4 +32,21 @@ body{
 
     color: var(--default-text-color);
     background: var(--default-background-color);
+}
+
+/* Style des liens */
+.link{
+    color: var(--default-text-color);
+    text-decoration: none;
+}
+
+.link:hover{
+    transform: scale(1.05);
+    text-decoration: underline;
+}
+
+/* Lien Désactivé */
+.disabled{
+    pointer-events: none;
+    color: rgb(152, 152, 152) !important;
 }

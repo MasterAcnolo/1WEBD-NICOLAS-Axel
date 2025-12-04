@@ -1,0 +1,43 @@
+.hamburger-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 200vh;
+    background-color: rgba(28, 28, 28, 0.821);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 9;
+}
+
+.hamburger-overlay.active {
+    display: block;
+    opacity: 1;
+
+}
+
+.hamburger-menu {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    right: -100%;
+    top: 30vh;
+    gap: 20px;
+    font-size: 3em;
+    text-align: end;
+    transition: right 0.3s ease; 
+    z-index: 11;
+}
+
+.hamburger-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+.hamburger-menu.active {
+    right: 7vw;
+}
