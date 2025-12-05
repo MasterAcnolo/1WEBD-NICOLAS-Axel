@@ -1,5 +1,5 @@
 import { fetchMovies } from "../services/fetch.js";
-import generateMovieCard from "../components/moviecard.js";
+import {generateMovieCard} from "../components/moviecard.js";
 
 const searchBar = document.getElementById("searchInput");
 const outputContainer = document.getElementById("search-container");

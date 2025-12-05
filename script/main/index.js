@@ -1,5 +1,5 @@
 import { fetchMovies } from "../services/fetch.js";
-import generateMovieCard from "../components/moviecard.js";
+import {generateMovieCard} from "../components/moviecard.js";
 import {getMaxBySize, manageCardLayout} from "../helpers/pagination.js";
 import { getDiscoverMovies } from "../helpers/buffer.js";
 

@@ -1,4 +1,4 @@
-export default function generateMovieCard(data, limit) {
+function generateMovieCard(data, limit) {
     let htmlContent = "";
 
     if (!data || !data.results || data.results.length === 0) {
@@ -29,13 +29,24 @@ export default function generateMovieCard(data, limit) {
         }
 
         htmlContent += `
-            <div class="movie-card">
+            <a href="https://www.themoviedb.org/movie/${film.id}" target="_blank" class="movie-card" id="movie-${film.id}">
                 <img src="${image}" alt="${altText}" onerror="this.src='../../assets/notfound.png'">
                 <h3>${film.title}</h3>
                 <p>${year}</p>
-            </div>
-        `;
-    }
+            </a>`
+        }
 
     return htmlContent;
 }
+
+document.addEventListener("click", (event) => {
+    const card = event.target.closest(".movie-card");
+    if (!card) return;
+
+    event.preventDefault();
+    const movieId = card.id.split("movie-")[1];
+    console.log(movieId)
+});
+
+
+export {generateMovieCard}
