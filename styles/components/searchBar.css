@@ -45,16 +45,17 @@
 }
 
 .searchSearchBar{
-    position: absolute;
+    align-self: center;
     z-index: 9;
     justify-self: center;
-    top: 30vh;
+    margin-top: 30vh;
     padding: 10px 60px 10px 10px;
     font-size: 1.3em;
 }
 
 .searchSearchBar .searchInput{
-    padding: 15px 500px 15px 10px;
+    padding: 15px 20vw 15px 10px;
+    position:relative;
 }
 
 .searchSearchBar .searchBtn img {
