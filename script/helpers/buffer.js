@@ -26,10 +26,4 @@ async function getDiscoverMovies(count = DISCOVER_CHUNK) {
     return moviesToReturn;
 }
 
-// Permet de réinitialiser le buffer si besoin
-function resetDiscoverBuffer() {
-    discoverBuffer = [];
-    discoverPage = 1;
-}
-
-export { getDiscoverMovies, resetDiscoverBuffer };
+export { getDiscoverMovies};
