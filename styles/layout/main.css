@@ -49,3 +49,14 @@
     font-size: 2em;
     justify-self: center;
 }
+
+@media (max-width: 469px) {
+    .trending, .discover, .search{
+        padding: 0;
+    }
+
+    #trending-container{
+        gap: 0;
+    }
+
+}

@@ -55,3 +55,35 @@
         width: 200px;
     }
 }
+
+@media (max-width: 530px) {
+    .movie-card{
+        width: 100px;
+    }
+
+    .movie-card h3{
+        font-size: 0.7rem;
+        line-clamp: 3;
+        -webkit-line-clamp: 3;
+        max-height: 4em;
+    }
+}
+
+@media (max-width: 388px) {
+    .movie-card h3{
+        font-size: 0.8em;
+    }
+
+    .movie-card{
+        margin: 5px;
+    }
+
+}
+
+@media (max-width: 357px) {
+
+    .movie-card{
+        width: 80px;
+    }
+
+}
