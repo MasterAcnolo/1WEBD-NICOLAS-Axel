@@ -29,7 +29,7 @@ async function fetchMovies(TYPE, ARGS = "", PAGE = 1, YEAR = 2025) {
     
         
     } else if (TYPE === "ID") {
-        URL = `${BASE_URL}/movie/${ENCODEDARGS}?api_key=${API_KEY}&language=en-US`;
+        URL = `${BASE_URL}/movie/${ENCODEDARGS}?api_key=${API_KEY}&language=en-US&append_to_response=credits`;
 
 
     } else if (TYPE === "YEAR") {

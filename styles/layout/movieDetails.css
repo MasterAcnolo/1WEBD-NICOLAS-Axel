@@ -1,0 +1,51 @@
+.movie-details {
+    display: flex;
+    gap: 30px;
+    width: fit-content;
+    justify-self: center;
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 20vh;
+    font-family: Poppins;
+}
+
+.poster {
+    width: 350px;
+    border-radius: 10px;
+}
+
+.movie-right {
+    flex: 1;
+}
+
+h1 {
+    margin: 0 0 10px;
+    font-size: 2.2rem;
+}
+
+.genres {
+    opacity: 0.7;
+    margin-bottom: 15px;
+}
+
+.overview {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.info-grid p {
+    margin: 8px 0;
+}
+
+@media(max-width: 800px) {
+    .movie-details {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .poster {
+        width: 250px;
+    }
+}

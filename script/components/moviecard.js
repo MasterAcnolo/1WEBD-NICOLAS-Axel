@@ -40,12 +40,15 @@ function generateMovieCard(data, limit) {
 }
 
 document.addEventListener("click", (event) => {
-    const card = event.target.closest(".movie-card");
+    const card = event.target.closest(".movie-card"); // Prend l'élément parent le plus proche du click (Card)
     if (!card) return;
 
     event.preventDefault();
+
     const movieId = card.id.split("movie-")[1];
-    console.log(movieId)
+    localStorage.setItem("MOVIE_ID", movieId);
+
+    window.location.href = "movie.html"; // Rediriger vers la page movie
 });
 
 
