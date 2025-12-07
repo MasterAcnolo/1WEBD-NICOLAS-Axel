@@ -14,13 +14,10 @@ function generateMovieDetails(movie) {
 
         genres = "";
 
-        for (let i = 0; i < movie.genres.length; i++) {
-
-            genres += movie.genres[i].name;
-
-            if (i < movie.genres.length - 1) {
-                genres += ", "; // add , between topics
-            }
+        if (movie.genres && movie.genres.length > 0) {
+            genres = movie.genres.map(function(e) {
+                return e.name;
+            }).join(", ");
         }
     }
 
