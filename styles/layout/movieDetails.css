@@ -6,7 +6,7 @@
     background: #1a1a1a;
     padding: 25px;
     border-radius: 12px;
-    margin-top: 20vh;
+    margin: 20vh 10vh;
     font-family: Poppins;
 }
 
@@ -19,7 +19,7 @@
     flex: 1;
 }
 
-h1 {
+.movie-details h1{
     margin: 0 0 10px;
     font-size: 2.2rem;
 }
@@ -38,6 +38,16 @@ h1 {
     margin: 8px 0;
 }
 
+@media(max-width: 1150px) {
+    .movie-details h1{
+        font-size: 1.7em;
+    }
+
+    .movie-details *:not(h1) {
+        font-size: 90%;
+    }
+}
+
 @media(max-width: 800px) {
     .movie-details {
         flex-direction: column;
@@ -48,4 +58,9 @@ h1 {
     .poster {
         width: 250px;
     }
+
+    .movie-details *:not(h1) {
+        font-size: 100%;
+    }
+
 }
