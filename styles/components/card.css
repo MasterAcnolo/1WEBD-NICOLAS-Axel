@@ -50,6 +50,10 @@
     border: 2px solid rgb(102, 102, 102);
 }
 
+.movie-card:active{
+    transform: scale(0.9);
+}
+
 @media (max-width: 1000px) {
     .movie-card{
         width: 200px;
