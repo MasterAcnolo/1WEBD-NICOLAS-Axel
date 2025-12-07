@@ -15,7 +15,8 @@
 .hamburger-overlay.active {
     display: block;
     opacity: 1;
-
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .hamburger-menu {
@@ -33,11 +34,23 @@
 
 .hamburger-overlay.active {
     opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
 
+}
 
 .hamburger-menu.active {
     right: 7vw;
+}
+
+#hamburger-button {
+  display: none;
+}
+
+#hamburger-button.visible {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  #hamburger-button {
+    display: block;
+  }
 }
