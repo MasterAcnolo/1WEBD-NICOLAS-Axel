@@ -7,7 +7,7 @@ function manageCardLayout(){
     const pageWidth = window.innerWidth;
     let size;
 
-    if(pageWidth < 600){
+    if(pageWidth < 530){
         size = 100; // mobile
     } else if(pageWidth < 1024){
         size = 225; // tablette
