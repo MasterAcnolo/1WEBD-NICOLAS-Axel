@@ -30,6 +30,7 @@ async function discoverMovies() {
     div.style.flexWrap = "wrap";
 
     div.innerHTML = generateMovieCard({ results: movies }, movies.length); // { results: movies } faut envoyer ça pour cet API
+    div.classList.add("fade-slide-in");
     discoverContainer.appendChild(div);
 }
 
@@ -46,3 +47,5 @@ loadMoreButton.addEventListener("click", async function (e) {
     e.preventDefault();
     await discoverMovies();
 });
+
+loadMoreButton.addEventListener("auxclick", e => e.preventDefault());
