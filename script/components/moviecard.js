@@ -29,7 +29,7 @@ function generateMovieCard(data, limit) {
         }
 
         htmlContent += `
-            <a href="https://www.themoviedb.org/movie/${film.id}" target="_blank" class="movie-card" id="movie-${film.id}">
+            <a href="movie.html" target="_blank" class="movie-card" id="movie-${film.id}">
                 <img src="${image}" alt="${altText}" onerror="this.src='../../assets/notfound.png'">
                 <h3>${film.title}</h3>
                 <p>${year}</p>
