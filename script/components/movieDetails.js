@@ -35,7 +35,7 @@ function generateMovieDetails(movie) {
     // Actors
     let actors = "Unknown";
     if (movie.credits && movie.credits.cast && movie.credits.cast.length > 0) {
-        const topActors = movie.credits.cast.slice(0, 5).map(a => a.name);
+        const topActors = movie.credits.cast.slice(0, 5).map(a => a.name); // Get the 5 first actor, and return only the name
         if (topActors.length > 0) {
             actors = topActors.join(", ");
         }
