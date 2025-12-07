@@ -1,8 +1,6 @@
 let isActive = false;
 
-document.addEventListener("DOMContentLoaded", () => {
-    setupHamburger();
-});
+document.addEventListener("DOMContentLoaded", setupHamburger);
 
 function setupHamburger() {
     const hamburgerIcon = document.getElementById("hamburger-button");
