@@ -9,6 +9,7 @@
 @import url(layout/footer.css);
 
 /* Components */
+@import url(components/animation.css);
 @import url(components/button.css);
 @import url(components/card.css);
 @import url(components/searchBar.css);
