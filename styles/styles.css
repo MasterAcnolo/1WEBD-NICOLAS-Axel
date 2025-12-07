@@ -24,7 +24,7 @@ html{
 }
 
 html, body {
-    height: 100%; /* prend tout l'espace disponible */
+    height: 100vh; /* prend tout l'espace disponible */
     margin: 0;
     padding: 0;
 }
