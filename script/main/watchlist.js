@@ -30,7 +30,7 @@ async function renderFavorites() {
 
 async function renderBookmark() {
     if (bookmarkMovies.length === 0) {
-        bookContainer.innerHTML = "<p>No Likes Movies Yet.</p>";
+        bookContainer.innerHTML = "<p>No Bookmarked Movies Yet.</p>";
         return;
     }
 
