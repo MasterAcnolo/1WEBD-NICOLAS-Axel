@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const savedQuery = localStorage.getItem("INDEX-SEARCH");
 
-    if (savedQuery.length !== 0) {
+    if (savedQuery) {
         searchBar.value = savedQuery;
         currentQuery = savedQuery;
         currentPage = 1;
