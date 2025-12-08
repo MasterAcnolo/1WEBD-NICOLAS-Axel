@@ -34,7 +34,7 @@ async function renderBookmark() {
         return;
     }
 
-    for (const id of favMovies) {
+    for (const id of bookmarkMovies) {
         const movie = await fetchMovies("ID", id);
         const card = document.createElement("div");
         card.innerHTML = `
