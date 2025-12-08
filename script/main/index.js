@@ -7,6 +7,8 @@ const trendingContainer = document.getElementById("trending-container");
 const discoverContainer = document.getElementById("discover-container");
 const loadMoreButton = document.getElementById("load-more");
 
+const searchBarInput = document.getElementById("searchInput");
+const searchBarButton = document.getElementById("searchBtn");
 
 const max = getMaxBySize(manageCardLayout());
 
@@ -49,3 +51,19 @@ loadMoreButton.addEventListener("click", async function (e) {
 });
 
 loadMoreButton.addEventListener("auxclick", e => e.preventDefault());
+
+searchBarInput.addEventListener("input", function(){
+    let value = searchBarInput.value
+    
+    localStorage.setItem("INDEX-SEARCH", value);
+})
+
+searchBarButton.addEventListener("click", function(){
+    window.location.href = "search.html"
+})
+
+searchBarInput.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        window.location.href = "search.html"
+    }
+});
