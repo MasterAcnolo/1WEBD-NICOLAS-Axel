@@ -97,8 +97,13 @@ function generateMovieDetails(movie) {
     return `
     <div class="movie-details">
 
-        <div class="movie-left">
+        <div class="movie-left" style="display: flex; flex-direction: column;">
             <img src="${poster}" class="poster">
+
+            <div class="movie-details-button">
+                <button class="fav-btn">💖</button>
+                <button class="bookmark-btn">💾</button>
+            </div>
         </div>
 
         <div class="movie-right">

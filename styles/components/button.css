@@ -57,3 +57,28 @@
     height: auto;
     filter: invert();
 }
+
+/* Bouton Like + Favori */
+
+.movie-details-button{
+    display: flex;
+    align-self: center;
+}
+
+.movie-left button {
+    align-self: center;
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    transition: transform 0.2s ease;
+}
+
+.movie-left button:hover {
+    transform: scale(1.2);
+}
+
+.movie-left button:active {
+    transform: scale(0.9);
+}
