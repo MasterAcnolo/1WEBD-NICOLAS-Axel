@@ -27,22 +27,22 @@ document.addEventListener("DOMContentLoaded", async () => {
     };
 
     if (likeBtn) {
-        const id = parseInt(likeBtn.dataset.id, 10);
-        likeBtn.querySelector(".fav-img").src = JSON.parse(localStorage.getItem("likes") || []).includes(id)
+    const id = parseInt(likeBtn.dataset.id, 10);
+    likeBtn.querySelector(".fav-img").src = JSON.parse(localStorage.getItem("likes") || "[]").includes(id)
+        ? "../../assets/icon/hearth-filled.png"
+        : "../../assets/icon/heart.png";
+
+    likeBtn.addEventListener("click", () => {
+        const active = toggleLocalStorage("likes", id);
+        likeBtn.querySelector(".fav-img").src = active
             ? "../../assets/icon/hearth-filled.png"
             : "../../assets/icon/heart.png";
-
-        likeBtn.addEventListener("click", () => {
-            const active = toggleLocalStorage("likes", id);
-            likeBtn.querySelector(".fav-img").src = active
-                ? "../../assets/icon/hearth-filled.png"
-                : "../../assets/icon/heart.png";
-        });
+    });
     }
 
     if (bookBtn) {
         const id = parseInt(bookBtn.dataset.id, 10);
-        bookBtn.querySelector(".book-img").src = JSON.parse(localStorage.getItem("bookmarks") || []).includes(id)
+        bookBtn.querySelector(".book-img").src = JSON.parse(localStorage.getItem("bookmarks") || "[]").includes(id)
             ? "../../assets/icon/bookmark-filled.png"
             : "../../assets/icon/bookmark.png";
 
@@ -53,4 +53,5 @@ document.addEventListener("DOMContentLoaded", async () => {
                 : "../../assets/icon/bookmark.png";
         });
     }
+
 });
