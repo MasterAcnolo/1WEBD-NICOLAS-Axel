@@ -16,6 +16,17 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
+    const savedQuery = localStorage.getItem("INDEX-SEARCH");
+
+    if (savedQuery.length !== 0) {
+        searchBar.value = savedQuery;
+        currentQuery = savedQuery;
+        currentPage = 1;
+        totalPages = 1;
+        outputContainer.innerHTML = "";
+        runSearch(currentQuery, currentPage);
+    }
+
     searchBar.addEventListener("input", function () {
         const query = searchBar.value.trim();
 
