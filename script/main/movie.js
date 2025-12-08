@@ -3,7 +3,10 @@ import { generateMovieDetails } from "../components/movieDetails.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
     const movieId = localStorage.getItem("MOVIE_ID");
-    if (!movieId) return console.error("ID introuvable");
+    if (!movieId){
+        window.location.href = "search.html";
+        return console.error("ID introuvable");
+    }
 
     const movie = await fetchMovies("ID", movieId);
     const container = document.getElementById("movie-container");
