@@ -58,27 +58,27 @@
     filter: invert();
 }
 
-/* Bouton Like + Favori */
+/* Like + Bookmarks */
 
 .movie-details-button{
     display: flex;
     align-self: center;
 }
 
-.movie-left button {
-    align-self: center;
-    font-size: 22px;
+.movie-details-button button {
     background: none;
     border: none;
     cursor: pointer;
-    width: fit-content;
-    transition: transform 0.2s ease;
 }
 
-.movie-left button:hover {
-    transform: scale(1.2);
+.movie-details-button button img{
+    width: 50px;
 }
 
-.movie-left button:active {
-    transform: scale(0.9);
+.movie-details-button button:hover {
+    transform: scale(1.1);
+}
+
+.movie-details-button button:active {
+    transform: scale(0.95);
 }

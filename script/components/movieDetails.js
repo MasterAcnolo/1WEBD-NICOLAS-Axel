@@ -101,8 +101,13 @@ function generateMovieDetails(movie) {
             <img src="${poster}" class="poster">
 
             <div class="movie-details-button">
-                <button class="fav-btn">💖</button>
-                <button class="bookmark-btn">💾</button>
+                <button class="fav-btn" data-id="${movie.id}">
+                    <img class="fav-img" src="">
+                </button>
+
+                <button class="bookmark-btn" data-id="${movie.id}">
+                    <img class="book-img" src="">
+                </button>
             </div>
         </div>
 

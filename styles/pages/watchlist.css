@@ -1,5 +1,9 @@
 main{
     font-family: Poppins;
-    margin: 20vh 100px;
-    background-color: red;
+    margin: 20vh 50px;
+}
+
+main #favorites-container, main #bookmarks-container{
+    display: flex;
+    flex-wrap: wrap;
 }
