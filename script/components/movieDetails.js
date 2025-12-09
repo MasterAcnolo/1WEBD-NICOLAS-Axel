@@ -99,16 +99,6 @@ function generateMovieDetails(movie) {
 
         <div class="movie-left" style="display: flex; flex-direction: column;">
             <img src="${poster}" class="poster">
-
-            <div class="movie-details-button">
-                <button class="fav-btn" data-id="${movie.id}">
-                    <img class="fav-img" src="">
-                </button>
-
-                <button class="bookmark-btn" data-id="${movie.id}">
-                    <img class="book-img" src="">
-                </button>
-            </div>
         </div>
 
         <div class="movie-right">
@@ -137,6 +127,17 @@ function generateMovieDetails(movie) {
                 <p><strong>MetaScore:</strong> ${metascore}</p>
 
             </div>
+
+            <div class="movie-details-button">
+                <button class="fav-btn" data-id="${movie.id}">
+                    <img class="fav-img" src="">
+                </button>
+
+                <button class="bookmark-btn" data-id="${movie.id}">
+                    <img class="book-img" src="">
+                </button>
+            </div>
+            
         </div>
 
     </div>
