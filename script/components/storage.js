@@ -1,7 +1,16 @@
+import { likeIDName, bookmarkIDName } from "../common";
+
+/* GET */
 function getLikes() {
-    return JSON.parse(localStorage.getItem("LIKES") || "[]");
+    return JSON.parse(localStorage.getItem(likeIDName) || "[]");
 }
 
+function getBookmarks() {
+    return JSON.parse(localStorage.getItem(bookmarkIDName) || "[]");
+}
+
+
+/* TOGGLE */
 function toggleLike(movieId) {
     const favorites = getBookmarks();
     const index = favorites.indexOf(movieId);
@@ -12,12 +21,8 @@ function toggleLike(movieId) {
         favorites.splice(index, 1);
     }
 
-    localStorage.setItem("LIKES", JSON.stringify(favorites));
+    localStorage.setItem(likeIDName, JSON.stringify(favorites));
     return favorites.includes(movieId);
-}
-
-function getBookmarks() {
-    return JSON.parse(localStorage.getItem("BOOKMARKS") || "[]");
 }
 
 function toggleBookmark(movieId) {
@@ -30,7 +35,7 @@ function toggleBookmark(movieId) {
         bookmarks.splice(index, 1);
     }
 
-    localStorage.setItem("BOOKMARKS", JSON.stringify(bookmarks));
+    localStorage.setItem(bookmarkIDName, JSON.stringify(bookmarks));
     return bookmarks.includes(movieId);
 }
 
