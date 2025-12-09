@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (likeBtn) {
     const id = parseInt(likeBtn.dataset.id, 10);
-    likeBtn.querySelector(".fav-img").src = JSON.parse(localStorage.getItem("likes") || "[]").includes(id)
+    likeBtn.querySelector(".fav-img").src = JSON.parse(localStorage.getItem("LIKES") || "[]").includes(id)
         ? "../../assets/icon/hearth-filled.png"
         : "../../assets/icon/heart.png";
 
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (bookBtn) {
         const id = parseInt(bookBtn.dataset.id, 10);
-        bookBtn.querySelector(".book-img").src = JSON.parse(localStorage.getItem("bookmarks") || "[]").includes(id)
+        bookBtn.querySelector(".book-img").src = JSON.parse(localStorage.getItem("BOOKMARKS") || "[]").includes(id)
             ? "../../assets/icon/bookmark-filled.png"
             : "../../assets/icon/bookmark.png";
 
