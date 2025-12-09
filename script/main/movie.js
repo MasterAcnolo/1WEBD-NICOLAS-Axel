@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         : "../../assets/icon/heart.png";
 
     likeBtn.addEventListener("click", () => {
-        const active = toggleLocalStorage("likes", id);
+        const active = toggleLocalStorage("LIKES", id);
         likeBtn.querySelector(".fav-img").src = active
             ? "../../assets/icon/hearth-filled.png"
             : "../../assets/icon/heart.png";
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             : "../../assets/icon/bookmark.png";
 
         bookBtn.addEventListener("click", () => {
-            const active = toggleLocalStorage("bookmarks", id);
+            const active = toggleLocalStorage("BOOKMARKS", id);
             bookBtn.querySelector(".book-img").src = active
                 ? "../../assets/icon/bookmark-filled.png"
                 : "../../assets/icon/bookmark.png";

@@ -1,5 +1,5 @@
 function getLikes() {
-    return JSON.parse(localStorage.getItem("favorites") || "[]");
+    return JSON.parse(localStorage.getItem("LIKES") || "[]");
 }
 
 function toggleLike(movieId) {
@@ -12,12 +12,12 @@ function toggleLike(movieId) {
         favorites.splice(index, 1);
     }
 
-    localStorage.setItem("favorites", JSON.stringify(favorites));
+    localStorage.setItem("LIKES", JSON.stringify(favorites));
     return favorites.includes(movieId);
 }
 
 function getBookmarks() {
-    return JSON.parse(localStorage.getItem("bookmarks") || "[]");
+    return JSON.parse(localStorage.getItem("BOOKMARKS") || "[]");
 }
 
 function toggleBookmark(movieId) {
@@ -30,7 +30,7 @@ function toggleBookmark(movieId) {
         bookmarks.splice(index, 1);
     }
 
-    localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+    localStorage.setItem("BOOKMARKS", JSON.stringify(bookmarks));
     return bookmarks.includes(movieId);
 }
 

@@ -1,7 +1,7 @@
 import { fetchMovies } from "../services/fetch.js";
 
-const favMovies = JSON.parse(localStorage.getItem("likes")) || [];
-const bookmarkMovies = JSON.parse(localStorage.getItem("bookmarks")) || [];
+const favMovies = JSON.parse(localStorage.getItem("LIKES")) || [];
+const bookmarkMovies = JSON.parse(localStorage.getItem("BOOKMARKS")) || [];
 
 const favContainer = document.getElementById("favorites-container");
 const bookContainer = document.getElementById("bookmarks-container");
