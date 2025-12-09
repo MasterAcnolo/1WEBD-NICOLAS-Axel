@@ -13,6 +13,7 @@ searchLinks.forEach(link => {
     }
 });
 
+/* SETTINGS CENTER */
 const bookmarkIDName = "BOOKMARKS"
 const likeIDName = "LIKES"
 
