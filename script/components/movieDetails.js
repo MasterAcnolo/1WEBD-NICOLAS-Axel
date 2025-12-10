@@ -42,14 +42,13 @@ function generateMovieDetails(movie) {
     }
 
     // Rating stars
+    const maxStars = 5;
+    let ratingValue = typeof movie.vote_average === "number" ? movie.vote_average : 0;
+    const starRatio = ratingValue / 10; // 0 to 1
     let ratingStars = "";
-    let ratingValue = 0;
-    if (typeof movie.vote_average === "number") {
-        ratingValue = movie.vote_average;
-        const starCount = Math.round(ratingValue / 2);
-        for (let i = 0; i < starCount; i++) {
-            ratingStars += "★";
-        }
+
+    for (let i = 0; i < maxStars; i++) {
+        ratingStars += `<span style="color: ${i < starRatio * maxStars ? "yellow" : "gray"}">★</span>`;
     }
 
     // Title
@@ -116,7 +115,7 @@ function generateMovieDetails(movie) {
 
                 <p><strong>Director:</strong> ${director}</p>
 
-                <p><strong>Rating:</strong> ${ratingStars} (${ratingValue})</p>
+                <p><strong>Rating:</strong> ${ratingStars}</p>
 
                 <p><strong>Year:</strong> ${year}</p>
 
