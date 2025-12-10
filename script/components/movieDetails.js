@@ -47,9 +47,14 @@ function generateMovieDetails(movie) {
     const starRatio = ratingValue / 10; // 0 to 1
     let ratingStars = "";
 
-    for (let i = 0; i < maxStars; i++) {
+    if (starRatio == 0){
+        ratingStars = "Not Rated Yet"
+    }else{
+        for (let i = 0; i < maxStars; i++) {
         ratingStars += `<span style="color: ${i < starRatio * maxStars ? "yellow" : "gray"}">★</span>`;
+        };
     }
+    
 
     // Title
     let title = "N/A";
@@ -90,7 +95,12 @@ function generateMovieDetails(movie) {
     // Metascore
     let metascore = "N/A";
     if (typeof movie.vote_average === "number") {
+
+        if (movie.vote_average == 0){
+            metascore = "Not Rated Yet"
+        } else{
         metascore = Math.round(movie.vote_average * 10);
+        }
     }
 
     return `
