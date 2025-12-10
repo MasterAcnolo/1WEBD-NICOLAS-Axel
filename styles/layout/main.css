@@ -1,4 +1,4 @@
-/*Conteneur Global*/
+/*All main container*/
 .trending, .discover, .search{
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@
 
 .trending{
     background-color: var( --section-background-color);
-    scroll-margin-top: 150px /* Pour le décalage d'ancre */
+    scroll-margin-top: 150px /* Ancher Gap */
 }
 
 .search{

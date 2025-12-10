@@ -41,6 +41,8 @@ body{
 
     color: var(--default-text-color);
     background: var(--default-background-color);
+    font-family: Poppins; /* Default Fonts */
+
 }
 
 /* Link Style */

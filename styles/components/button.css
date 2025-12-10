@@ -1,4 +1,4 @@
-/* Flèche Hero */
+/* Hero Arrow */
 .scrollHint {
     position: absolute;
     display: inline-block;
@@ -17,7 +17,7 @@
     cursor: pointer;
 }
 
-/* Charger plus*/
+/* Load More */
 #load-more {
     padding: 12px 28px;
     background: linear-gradient(135deg, #ff6a00, #ffb347);
@@ -43,14 +43,7 @@
     transform: scale(0.9);
 }
 
-@keyframes bounce {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
-    100% { transform: translateY(0); }
-}
-
 /* Hamburger Bouton */
-
 #hamburger-button{
     z-index: 99;
     width: 40px;
@@ -59,7 +52,6 @@
 }
 
 /* Like + Bookmarks */
-
 .movie-details-button{
     display: flex;
     align-self: center;
