@@ -93,15 +93,27 @@ function generateMovieDetails(movie) {
     }
 
     // Metascore
-    let metascore = "N/A";
-    if (typeof movie.vote_average === "number") {
+    let metascore = "";
 
-        if (movie.vote_average == 0){
-            metascore = "Not Rated Yet"
-        } else{
-        metascore = Math.round(movie.vote_average * 10);
+    if (typeof movie.vote_average === "number") {
+        if (movie.vote_average === 0) {
+            metascore = `<span style="color: red">Not Rated Yet</span>`;
+        } else {
+            const score = Math.round(movie.vote_average * 10); // sur 100
+            let color = "";
+
+            if (score < 50) {
+                color = "red";
+            } else if (score < 75) {
+                color = "orange";
+            } else {
+                color = "green";
+            }
+
+            metascore = `<span style="font-weight:400;color: ${color}">${score}</span>`;
         }
     }
+
 
     return `
     <div class="movie-details">
