@@ -12,6 +12,9 @@
     margin-top: 50px;
     z-index: 5;
 }
+.discover div{
+    display: flex;
+}
 
 .trending{
     background-color: var( --section-background-color);

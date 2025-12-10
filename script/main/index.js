@@ -27,9 +27,6 @@ async function discoverMovies() {
     const movies = await getDiscoverMovies(max);
 
     const div = document.createElement("div");
-    div.style.display = "flex";
-    div.style.justifyContent = "center";
-    div.style.flexWrap = "wrap";
 
     div.innerHTML = generateMovieCard({ results: movies }, movies.length); // { results: movies } faut envoyer ça pour cet API
     div.classList.add("fade-slide-in");
