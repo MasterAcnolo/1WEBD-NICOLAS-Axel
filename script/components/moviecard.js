@@ -7,7 +7,7 @@ function generateMovieCard(data, limit) {
     
     const tableauDeFilms = data.results;
 
-    for (let i = 1; i < limit; i++) {
+    for (let i = 0; i < limit; i++) {
         
         // Sécurité : Si on demande 10 films mais qu'il n'y en a que 3, on arrête la boucle
         if (i >= tableauDeFilms.length) {
