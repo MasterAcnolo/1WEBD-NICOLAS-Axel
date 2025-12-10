@@ -38,9 +38,10 @@
 }
 
 #search-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     flex-direction: row;
-    align-self: center; /* Faut régler ce soucis au plus vite*/
-    justify-content: center;
 }
 
 .trending h2, .discover h2{

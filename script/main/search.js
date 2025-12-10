@@ -4,6 +4,7 @@ import {generateMovieCard} from "../components/moviecard.js";
 const searchBar = document.getElementById("searchInput");
 const outputContainer = document.getElementById("search-container");
 const resultsInfo = document.getElementById("results-info");
+const endZone = document.getElementById("end-message");
 
 // État interne
 let currentQuery = "";
@@ -78,7 +79,7 @@ async function runSearch(query, page) {
         resultsInfo.innerHTML = `Affichage de ${outputContainer.children.length} films sur ${total}`;
 
         if(page === totalPages){
-            outputContainer.innerHTML += `<h2 class="end-message"> It seems you have reached the end... </h2>`
+            endZone.innerHTML += ` <h2 class="end-message"> It seems you have reached the end... </h2>`
         }
 
     } catch (error) {
