@@ -26,7 +26,6 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 20px;
 }
 
 #discover-container{
@@ -58,5 +57,10 @@
     #trending-container{
         gap: 0;
     }
+
+    .trending h2, .discover h2{
+        font-size: 1.5em;
+    }
+
 
 }

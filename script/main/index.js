@@ -1,6 +1,6 @@
 import { fetchMovies } from "../services/fetch.js";
 import {generateMovieCard} from "../components/moviecard.js";
-import {getMaxBySize, manageCardLayout} from "../helpers/pagination.js";
+import {getMaxBySize} from "../helpers/pagination.js";
 import { getDiscoverMovies } from "../helpers/buffer.js";
 
 const trendingContainer = document.getElementById("trending-container");
@@ -10,7 +10,7 @@ const loadMoreButton = document.getElementById("load-more");
 const searchBarInput = document.getElementById("searchInput");
 const searchBarButton = document.getElementById("searchBtn");
 
-const max = getMaxBySize(manageCardLayout());
+const max = getMaxBySize();
 
 function trendingMovies() {
     fetchMovies("TRENDING")

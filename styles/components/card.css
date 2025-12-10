@@ -54,19 +54,25 @@
     transform: scale(0.9);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1170px) {
     .movie-card{
         width: 200px;
     }
 }
 
-@media (max-width: 530px) {
+@media (max-width: 1008px) {
+    .movie-card{
+        width: 150px;
+    }
+}
+
+@media (max-width: 580px) {
     .movie-card{
         width: 100px;
     }
 
     .movie-card h3{
-        font-size: 0.7rem;
+        font-size: 0.8em;
         line-clamp: 3;
         -webkit-line-clamp: 3;
         max-height: 4em;
@@ -74,9 +80,6 @@
 }
 
 @media (max-width: 388px) {
-    .movie-card h3{
-        font-size: 0.8em;
-    }
 
     .movie-card{
         margin: 5px;
