@@ -54,6 +54,15 @@
     transform: scale(0.9);
 }
 
+.end-message{
+    font-family: Poppins;
+    align-self: flex-end;
+    width: 240px;
+    max-width: 240px;
+    flex: 1;
+    font-style: italic;
+}
+
 @media (max-width: 1170px) {
     .movie-card{
         width: 200px;
@@ -66,7 +75,7 @@
     }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 748px) {
     .movie-card{
         width: 100px;
     }

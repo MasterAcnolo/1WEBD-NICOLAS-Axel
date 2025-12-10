@@ -77,6 +77,10 @@ async function runSearch(query, page) {
         const total = data.total_results || "?";
         resultsInfo.innerHTML = `Affichage de ${outputContainer.children.length} films sur ${total}`;
 
+        if(page === totalPages){
+            outputContainer.innerHTML += `<h2 class="end-message"> It seems you have reached the end... </h2>`
+        }
+
     } catch (error) {
         console.error("Erreur pendant la recherche :", error);
     }
