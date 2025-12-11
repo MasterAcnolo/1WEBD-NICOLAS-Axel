@@ -71,9 +71,7 @@ async function runSearch(query, page) {
         }
 
         totalPages = data.total_pages;
-
-        outputContainer.style.display = "flex";
-        outputContainer.style.flexWrap = "wrap";
+        
         outputContainer.innerHTML += generateMovieCard({ results: data.results }, data.results.length);
 
         const total = data.total_results || "?";

@@ -15,7 +15,7 @@ const max = getMaxBySize();
 function trendingMovies() {
     fetchMovies("TRENDING")
         .then((data) => {
-            const trendingMoviesHTML = generateMovieCard(data, max);
+            const trendingMoviesHTML = generateMovieCard(data, max - 1);
             trendingContainer.innerHTML = trendingMoviesHTML;
         })
         .catch((error) => {
@@ -26,12 +26,19 @@ function trendingMovies() {
 async function discoverMovies() {
     const movies = await getDiscoverMovies(max);
 
-    const div = document.createElement("div");
+    movies.forEach(film => {
+        const html = generateMovieCard({ results: [film] }, 1);
 
-    div.innerHTML = generateMovieCard({ results: movies }, movies.length); // { results: movies } faut envoyer ça pour cet API
-    div.classList.add("fade-slide-in");
-    discoverContainer.appendChild(div);
+        const temp = document.createElement("div");
+        temp.innerHTML = html;
+
+        const card = temp.querySelector(".movie-card");
+        card.classList.add("fade-slide-in");
+
+        discoverContainer.appendChild(card);
+    });
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
     if (!trendingContainer || !discoverContainer) {

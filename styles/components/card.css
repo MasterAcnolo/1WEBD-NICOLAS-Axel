@@ -1,19 +1,19 @@
 .movie-card {
     display: flex;
     flex-direction: column;
-    width: 240px;
+    width: 100%;
+    max-width: 240px;
     background-color: var(--card-background-color);
     border-radius: 10px;
-    overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     font-family: sans-serif;
-    margin: 10px;
     text-decoration: none;
     border: 2px solid transparent;
     position: relative;
+    margin: 0;
+    overflow: hidden;
 }
-
 
 .movie-card img {
     width: 100%;
@@ -49,49 +49,9 @@
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     border: 2px solid rgb(102, 102, 102);
+    z-index: 10;
 }
 
 .movie-card:active{
-    transform: scale(0.9);
-}
-
-@media (max-width: 1170px) {
-    .movie-card{
-        width: 200px;
-    }
-}
-
-@media (max-width: 1008px) {
-    .movie-card{
-        width: 150px;
-    }
-}
-
-@media (max-width: 748px) {
-    .movie-card{
-        width: 100px;
-    }
-
-    .movie-card h3{
-        font-size: 0.8em;
-        line-clamp: 3;
-        -webkit-line-clamp: 3;
-        max-height: 4em;
-    }
-}
-
-@media (max-width: 388px) {
-
-    .movie-card{
-        margin: 5px;
-    }
-
-}
-
-@media (max-width: 357px) {
-
-    .movie-card{
-        width: 80px;
-    }
-
+    transform: translateY(0) scale(1.05);
 }
