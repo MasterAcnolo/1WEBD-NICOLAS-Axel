@@ -41,10 +41,16 @@ function generateMovieCard(data, limit) {
             else badgeColor = "green";
         }
 
+        let badgeRating = ""
+
+        if (note > 0){
+            badgeRating = `<div class="rating-badge" style="color: ${badgeColor}; border: 2px solid ${badgeColor}">${note}</div>`
+        }
+
         htmlContent += `
             <a href="movie.html" target="_blank" class="movie-card" id="movie-${film.id}">
                 <img src="${image}" alt="${altText}" onerror="this.src='../../assets/notfound.png'">
-                <div class="rating-badge" style="color: ${badgeColor}; border: 2px solid ${badgeColor}">${note}</div>
+                ${badgeRating}
                 <h3>${film.title}</h3>
                 <p>${year}</p>
             </a>`
