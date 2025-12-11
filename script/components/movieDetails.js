@@ -33,13 +33,29 @@ function generateMovieDetails(movie) {
     }
 
     // Actors
-    let actors = "Unknown";
+    let actorsHtml = "";
     if (movie.credits && movie.credits.cast && movie.credits.cast.length > 0) {
-        const topActors = movie.credits.cast.slice(0, 5).map(a => a.name); // Get the 5 first actor, and return only the name
-        if (topActors.length > 0) {
-            actors = topActors.join(", ");
-        }
+        const topActors = movie.credits.cast.slice(0, 7);
+        
+        topActors.forEach(actor => {
+            const pic = actor.profile_path 
+                ? `https://image.tmdb.org/t/p/w185${actor.profile_path}` 
+                : "../../assets/person-notfound.png";
+
+            const character = actor.character || "Unknown";
+
+            actorsHtml += `
+                <div class="actor-card">
+                    <img src="${pic}" alt="${actor.name}">
+                    <p class="actor-name">${actor.name}</p>
+                    <p class="actor-character">${character}</p>
+                </div>
+            `;
+        });
+    } else {
+        actorsHtml = "<p>Unknown</p>";
     }
+
 
     // Rating stars
     const maxStars = 5;
@@ -118,47 +134,54 @@ function generateMovieDetails(movie) {
     return `
     <div class="movie-details">
 
-        <div class="movie-left" style="display: flex; flex-direction: column;">
-            <img src="${poster}" class="poster">
+        <div class="first-line">
+            <div class="movie-left" style="display: flex; flex-direction: column;">
+                <img src="${poster}" class="poster">
+            </div>
+
+            <div class="movie-right">
+
+                <div class="title">
+                    <h1>${title}</h1>
+
+                    <div class="movie-details-button">
+                        <button class="fav-btn" data-id="${movie.id}">
+                            <img class="fav-img" src="">
+                        </button>
+
+                        <button class="bookmark-btn" data-id="${movie.id}">
+                            <img class="book-img" src="">
+                        </button>
+                    </div>
+                </div>
+                <p class="genres">${genres}</p>
+
+                <p class="overview">${overview}</p>
+
+                <div class="info-grid">
+
+                    <p><strong>Duration:</strong> ${duration}</p>
+
+                    <p><strong>Director:</strong> ${director}</p>
+
+                    <p><strong>Rating:</strong> ${ratingStars}</p>
+
+                    <p><strong>Year:</strong> ${year}</p>
+
+                    <p><strong>Box Office:</strong> ${revenue}</p>
+
+                    ${classificationHTML}
+
+                    <p><strong>MetaScore:</strong> ${metascore}</p>
+                </div>
+                
+            </div>
         </div>
-
-        <div class="movie-right">
-            <h1>${title}</h1>
-
-            <p class="genres">${genres}</p>
-
-            <p class="overview">${overview}</p>
-
-            <div class="info-grid">
-
-                <p><strong>Duration:</strong> ${duration}</p>
-
-                <p><strong>Actors:</strong> ${actors}</p>
-
-                <p><strong>Director:</strong> ${director}</p>
-
-                <p><strong>Rating:</strong> ${ratingStars}</p>
-
-                <p><strong>Year:</strong> ${year}</p>
-
-                <p><strong>Box Office:</strong> ${revenue}</p>
-
-                ${classificationHTML}
-
-                <p><strong>MetaScore:</strong> ${metascore}</p>
-
-            </div>
-
-            <div class="movie-details-button">
-                <button class="fav-btn" data-id="${movie.id}">
-                    <img class="fav-img" src="">
-                </button>
-
-                <button class="bookmark-btn" data-id="${movie.id}">
-                    <img class="book-img" src="">
-                </button>
-            </div>
+        
+        <div class="actors-container">
+            <p><strong>Casting</strong></p>
             
+            <div class="actors">${actorsHtml} </div>
         </div>
 
     </div>

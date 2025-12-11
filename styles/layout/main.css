@@ -1,4 +1,4 @@
-/*Conteneur Global*/
+/*All main container*/
 .trending, .discover, .search{
     display: flex;
     flex-direction: column;
@@ -12,10 +12,13 @@
     margin-top: 50px;
     z-index: 5;
 }
+.discover div{
+    display: flex;
+}
 
 .trending{
     background-color: var( --section-background-color);
-    scroll-margin-top: 150px /* Pour le décalage d'ancre */
+    scroll-margin-top: 150px /* Anchor Gap */
 }
 
 .search{
@@ -26,7 +29,6 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 20px;
 }
 
 #discover-container{
@@ -39,9 +41,10 @@
 }
 
 #search-container{
-    flex-direction: row;
-    align-self: center; /* Faut régler ce soucis au plus vite*/
+    display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .trending h2, .discover h2{
@@ -58,5 +61,10 @@
     #trending-container{
         gap: 0;
     }
+
+    .trending h2, .discover h2{
+        font-size: 1.5em;
+    }
+
 
 }

@@ -3,6 +3,8 @@ import {generateMovieCard} from "../components/moviecard.js";
 
 const searchBar = document.getElementById("searchInput");
 const outputContainer = document.getElementById("search-container");
+const resultsInfo = document.getElementById("results-info");
+const endZone = document.getElementById("end-message");
 
 // État interne
 let currentQuery = "";
@@ -29,13 +31,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     searchBar.addEventListener("input", function () {
         const query = searchBar.value.trim();
+        localStorage.setItem("INDEX-SEARCH", query)
 
         if (query.length === 0) {
             outputContainer.innerHTML = "";
+            resultsInfo.innerHTML = ""
             currentQuery = "";
             currentPage = 1;
             return;
         }
+
+        if (isLoading) return;
 
         // Nouvelle recherche = reset
         currentQuery = query;
@@ -51,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 async function runSearch(query, page) {
-    
     if (isLoading) return;
     isLoading = true;
 
@@ -59,7 +64,9 @@ async function runSearch(query, page) {
         const data = await fetchMovies("KEYWORDS", query, page);
 
         if (!data || !data.results || data.results.length === 0) {
-            if (page === 1) outputContainer.innerHTML = "<p>Aucun film trouvé</p>";
+            resultsInfo.innerHTML = "<p>Aucun film trouvé</p>";
+            outputContainer.innerHTML = "";
+            isLoading = false;
             return;
         }
 
@@ -67,8 +74,14 @@ async function runSearch(query, page) {
 
         outputContainer.style.display = "flex";
         outputContainer.style.flexWrap = "wrap";
-
         outputContainer.innerHTML += generateMovieCard({ results: data.results }, data.results.length);
+
+        const total = data.total_results || "?";
+        resultsInfo.innerHTML = `Affichage de ${outputContainer.children.length} films sur ${total}`;
+
+        if(page === totalPages){
+            endZone.innerHTML += ` <h2 class="end-message"> It seems you have reached the end... </h2>`
+        }
 
     } catch (error) {
         console.error("Erreur pendant la recherche :", error);
@@ -81,8 +94,8 @@ async function runSearch(query, page) {
 function infiniteScroll() {
     const scrollPos = window.scrollY;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    
-    if (scrollPos / maxScroll > 0.55 && currentQuery.length > 0 && currentPage < totalPages) {
+
+    if (!isLoading && scrollPos / maxScroll > 0.55 && currentQuery.length > 0 && currentPage < totalPages) {
         currentPage++;
         runSearch(currentQuery, currentPage);
     }

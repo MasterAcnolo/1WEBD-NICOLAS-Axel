@@ -1,8 +1,9 @@
 footer{
     display: flex;
     flex-direction: column;
-    font-family: Poppins;
     margin-top: 30vh; 
+    padding-top: 10vh;
+    background-color: var(--footer-background-color);
 }
 
 .top-side{
