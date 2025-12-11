@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     searchBar.addEventListener("input", function () {
         const query = searchBar.value.trim();
+        localStorage.setItem("INDEX-SEARCH", query)
 
         if (query.length === 0) {
             outputContainer.innerHTML = "";
