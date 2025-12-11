@@ -11,6 +11,7 @@
     margin: 10px;
     text-decoration: none;
     border: 2px solid transparent;
+    position: relative;
 }
 
 
@@ -60,6 +61,16 @@
     max-width: 240px;
     flex: 1;
     font-style: italic;
+}
+
+.rating-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgb(0, 0, 0);
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-weight: bold;
 }
 
 @media (max-width: 1170px) {

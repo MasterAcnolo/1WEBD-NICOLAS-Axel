@@ -28,9 +28,23 @@ function generateMovieCard(data, limit) {
             year = film.release_date.split("-")[0];
         }
 
+        //Note
+        let note = typeof film.vote_average === "number" ? film.vote_average : 0;
+
+        let badgeColor = "gray";
+        if (note === 0) {
+            badgeColor = "red";
+        } else {
+            const score = Math.round(note * 10);
+            if (score < 50) badgeColor = "red";
+            else if (score < 75) badgeColor = "orange";
+            else badgeColor = "green";
+        }
+
         htmlContent += `
             <a href="movie.html" target="_blank" class="movie-card" id="movie-${film.id}">
                 <img src="${image}" alt="${altText}" onerror="this.src='../../assets/notfound.png'">
+                <div class="rating-badge" style="color: ${badgeColor}; border: 2px solid ${badgeColor}">${note}</div>
                 <h3>${film.title}</h3>
                 <p>${year}</p>
             </a>`
