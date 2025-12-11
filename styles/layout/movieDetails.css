@@ -1,6 +1,6 @@
 .movie-details {
     display: flex;
-    flex-direction: column; /* pour que le casting tombe en dessous sur mobile */
+    flex-direction: column;
     gap: 30px;
     max-width: 1200px;
     margin: 20vh auto;
@@ -59,6 +59,11 @@
     margin: 0;
 }
 
+.title{
+    display:flex; 
+    justify-content:space-between;
+}
+
 /* Casting */
 .actors-container > p {
     font-size: 1.3rem;
@@ -111,10 +116,6 @@
     .movie-details h1 {
         font-size: 1.7em;
     }
-
-    .movie-details *:not(h1) {
-        font-size: 90%;
-    }
 }
 
 @media(max-width: 800px) {
@@ -122,6 +123,11 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+
+    .title{
+        justify-content:center;
+        gap: 10px;
     }
 
     .poster {

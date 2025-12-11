@@ -141,7 +141,7 @@ function generateMovieDetails(movie) {
 
             <div class="movie-right">
 
-                <div style="display:flex; justify-content:space-between">
+                <div class="title">
                     <h1>${title}</h1>
 
                     <div class="movie-details-button">
