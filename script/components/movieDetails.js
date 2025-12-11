@@ -142,7 +142,7 @@ function generateMovieDetails(movie) {
             <div class="movie-right">
 
                 <div class="title">
-                    <h1>${title}</h1>
+                    <h1>${title}<span class="year">${year}</span></h1>
 
                     <div class="movie-details-button">
                         <button class="fav-btn" data-id="${movie.id}">
@@ -165,8 +165,6 @@ function generateMovieDetails(movie) {
                     <p><strong>Director:</strong> ${director}</p>
 
                     <p><strong>Rating:</strong> ${ratingStars}</p>
-
-                    <p><strong>Year:</strong> ${year}</p>
 
                     <p><strong>Box Office:</strong> ${revenue}</p>
 

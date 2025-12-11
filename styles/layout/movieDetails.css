@@ -111,6 +111,12 @@
     opacity: 0.7;
 }
 
+.movie-right span.year{
+    color:gray;
+    font-size: 0.7em;
+    margin-left: 10px;
+}
+
 /* Responsive */
 @media(max-width: 1150px) {
     .movie-details h1 {
