@@ -16,6 +16,9 @@ async function renderFavorites() {
     for (const id of favMovies) {
         const movie = await fetchMovies("ID", id);
 
+        movies.forEach(movie => { 
+
+        });
         const card = document.createElement("a");
         card.href = "movie.html";
         card.className = "movie-card";
@@ -30,6 +33,22 @@ async function renderFavorites() {
         favContainer.appendChild(card);
     }
 }
+
+// async function discoverMovies() {
+//     const movies = await getDiscoverMovies(max);
+
+//     movies.forEach(film => {
+//         const html = generateMovieCard({ results: [film] }, 1);
+
+//         const temp = document.createElement("div");
+//         temp.innerHTML = html;
+
+//         const card = temp.querySelector(".movie-card");
+//         card.classList.add("fade-slide-in");
+
+//         discoverContainer.appendChild(card);
+//     });
+// }
 
 
 async function renderBookmark() {
