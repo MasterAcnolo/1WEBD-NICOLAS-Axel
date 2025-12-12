@@ -6,87 +6,43 @@ const bookmarkMovies = JSON.parse(localStorage.getItem("BOOKMARKS")) || [];
 const favContainer = document.getElementById("favorites-container");
 const bookContainer = document.getElementById("bookmarks-container");
 
+async function renderMovieList(ids, container, emptyMessage) {
+    if (!container) return;
 
-async function renderFavorites() {
-    if (favMovies.length === 0) {
-        favContainer.innerHTML = "<p>No Favorites Movies Yet.</p>";
+    if (ids.length === 0) {
+        container.innerHTML = `<p>${emptyMessage}</p>`;
         return;
     }
 
-    for (const id of favMovies) {
+    for (const id of ids) {
         const movie = await fetchMovies("ID", id);
-
-        movies.forEach(movie => { 
-
-        });
-        const card = document.createElement("a");
-        card.href = "movie.html";
-        card.className = "movie-card";
-        card.id = `movie-${movie.id}`;
-
-        card.innerHTML = `
-            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}">
-            <h3>${movie.title}</h3>
-            <p>${movie.release_date?.slice(0, 4) || "?"}</p>
-        `;
-
-        favContainer.appendChild(card);
+        container.appendChild(createMovieCard(movie));
     }
 }
 
-// async function discoverMovies() {
-//     const movies = await getDiscoverMovies(max);
+function createMovieCard(movie) {
+    const card = document.createElement("a");
+    card.href = "movie.html";
+    card.className = "movie-card";
+    card.id = `movie-${movie.id}`;
 
-//     movies.forEach(film => {
-//         const html = generateMovieCard({ results: [film] }, 1);
+    card.innerHTML = `
+        <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}">
+        <h3>${movie.title}</h3>
+        <p>${movie.release_date?.slice(0, 4) || "?"}</p>
+    `;
 
-//         const temp = document.createElement("div");
-//         temp.innerHTML = html;
-
-//         const card = temp.querySelector(".movie-card");
-//         card.classList.add("fade-slide-in");
-
-//         discoverContainer.appendChild(card);
-//     });
-// }
-
-
-async function renderBookmark() {
-    if (bookmarkMovies.length === 0) {
-        bookContainer.innerHTML = "<p>No Bookmarked Movies Yet.</p>";
-        return;
-    }
-
-    for (const id of bookmarkMovies) {
-        const movie = await fetchMovies("ID", id);
-
-        const card = document.createElement("a");
-        card.href = "movie.html";
-        card.className = "movie-card";
-        card.id = `movie-${movie.id}`;
-
-        card.innerHTML = `
-            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}">
-            <h3>${movie.title}</h3>
-            <p>${movie.release_date?.slice(0, 4) || "?"}</p>
-        `;
-
-        bookContainer.appendChild(card);
-    }
+    return card;
 }
-
 
 document.addEventListener("click", (event) => {
     const card = event.target.closest(".movie-card");
     if (!card) return;
 
     event.preventDefault();
-
-    const movieId = card.id.split("movie-")[1];
-    localStorage.setItem("MOVIE_ID", movieId);
-
+    localStorage.setItem("MOVIE_ID", card.id.replace("movie-", ""));
     window.location.href = "movie.html";
 });
 
-renderFavorites();
-renderBookmark();
+renderMovieList(favMovies, favContainer, "No Favorites Movies Yet.");
+renderMovieList(bookmarkMovies, bookContainer, "No Bookmarked Movies Yet.");

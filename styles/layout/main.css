@@ -25,7 +25,6 @@
     display: grid;
     width: 100%;
     gap: 20px;
-    justify-items: center; 
     grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
 }
 
