@@ -15,18 +15,22 @@ async function renderFavorites() {
 
     for (const id of favMovies) {
         const movie = await fetchMovies("ID", id);
-        const card = document.createElement("div");
+
+        const card = document.createElement("a");
+        card.href = "movie.html";
+        card.className = "movie-card";
+        card.id = `movie-${movie.id}`;
+
         card.innerHTML = `
-            <a href="movie.html" class="movie-card" id="movie-${movie.id}">
-                <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}">
-                <h3>${movie.title}</h3>
-                <p>${movie.release_date?.slice(0, 4) || "?"}</p>
-            </a>
+            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}">
+            <h3>${movie.title}</h3>
+            <p>${movie.release_date?.slice(0, 4) || "?"}</p>
         `;
 
         favContainer.appendChild(card);
     }
 }
+
 
 async function renderBookmark() {
     if (bookmarkMovies.length === 0) {
@@ -36,18 +40,22 @@ async function renderBookmark() {
 
     for (const id of bookmarkMovies) {
         const movie = await fetchMovies("ID", id);
-        const card = document.createElement("div");
+
+        const card = document.createElement("a");
+        card.href = "movie.html";
+        card.className = "movie-card";
+        card.id = `movie-${movie.id}`;
+
         card.innerHTML = `
-            <a href="movie.html" class="movie-card" id="movie-${movie.id}">
-                <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}">
-                <h3>${movie.title}</h3>
-                <p>${movie.release_date?.slice(0, 4) || "?"}</p>
-            </a>
+            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}">
+            <h3>${movie.title}</h3>
+            <p>${movie.release_date?.slice(0, 4) || "?"}</p>
         `;
 
         bookContainer.appendChild(card);
     }
 }
+
 
 document.addEventListener("click", (event) => {
     const card = event.target.closest(".movie-card");

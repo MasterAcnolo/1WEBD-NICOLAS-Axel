@@ -19,6 +19,8 @@
 
 #trending-container,
 #discover-container,
+#favorites-container,
+#bookmarks-container,
 #search-container {
     display: grid;
     width: 100%;
