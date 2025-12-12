@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
             outputContainer.innerHTML = "";
             resultsInfo.innerHTML = ""
             currentQuery = "";
+            endZone.innerHTML = "";
             currentPage = 1;
             return;
         }
@@ -66,6 +67,7 @@ async function runSearch(query, page) {
         if (!data || !data.results || data.results.length === 0) {
             resultsInfo.innerHTML = "<p>Aucun film trouvé</p>";
             outputContainer.innerHTML = "";
+            endZone.innerHTML = "";
             isLoading = false;
             return;
         }
@@ -78,7 +80,7 @@ async function runSearch(query, page) {
         resultsInfo.innerHTML = `Affichage de ${outputContainer.children.length} films sur ${total}`;
 
         if(page === totalPages){
-            endZone.innerHTML += ` <h2 class="end-message"> It seems you have reached the end... </h2>`
+            endZone.innerHTML = ` <h2 class="end-message"> It seems you have reached the end... </h2>`
         }
 
     } catch (error) {
