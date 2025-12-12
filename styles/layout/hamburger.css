@@ -27,10 +27,10 @@
     top: 30vh;
     gap: 20px;
     font-size: 3em;
-    text-align: end;
     transition: right 0.3s ease; 
-    z-index: 11;
+    z-index: 99;
 }
+
 
 .hamburger-overlay.active {
     opacity: 1;
@@ -39,6 +39,12 @@
 
 .hamburger-menu.active {
     right: 7vw;
+}
+
+.hamburger-menu.active a{
+  display: flex;
+  width: fit-content;
+  align-self: end;
 }
 
 #hamburger-button {
