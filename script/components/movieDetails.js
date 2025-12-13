@@ -1,3 +1,5 @@
+import {getColor} from "../helpers/color.js"
+
 function generateMovieDetails(movie) {
 
     // Poster
@@ -116,15 +118,7 @@ function generateMovieDetails(movie) {
             metascore = `<span style="color: red">Not Rated Yet</span>`;
         } else {
             const score = Math.round(movie.vote_average * 10); // 100
-            let color = "";
-
-            if (score < 50) {
-                color = "red";
-            } else if (score < 75) {
-                color = "orange";
-            } else {
-                color = "green";
-            }
+            let color = getColor(score);
 
             metascore = `<span style="font-weight:400;color: ${color}">${score}</span>`;
         }

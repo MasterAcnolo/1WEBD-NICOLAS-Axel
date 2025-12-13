@@ -1,3 +1,5 @@
+import {getColor} from "../helpers/color.js"
+
 function generateMovieCard(data, limit) {
     let htmlContent = "";
 
@@ -31,15 +33,9 @@ function generateMovieCard(data, limit) {
         //Note
         let note = typeof film.vote_average === "number" ? film.vote_average : 0;
 
-        let badgeColor = "gray";
-        if (note === 0) {
-            badgeColor = "red";
-        } else {
-            const score = Math.round(note * 10);
-            if (score < 50) badgeColor = "red";
-            else if (score < 75) badgeColor = "orange";
-            else badgeColor = "green";
-        }
+        const score = Math.round(note * 10);
+        let badgeColor = ""
+        badgeColor = getColor(score)
 
         let badgeRating = ""
 
