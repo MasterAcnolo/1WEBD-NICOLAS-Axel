@@ -17,7 +17,7 @@ function generateMovieCard(data, limit) {
         }
 
         const film = tableauDeFilms[i];
-        const altText = film.Title || "Film non trouvé";
+        const altText = film.title || "Movie not found";
 
         let image = `https://image.tmdb.org/t/p/w500/${film.poster_path}`;
         if (!image || image === "N/A") {
