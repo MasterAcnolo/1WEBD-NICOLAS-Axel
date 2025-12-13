@@ -14,7 +14,7 @@ let isLoading = false;
 
 document.addEventListener("DOMContentLoaded", function () {
     if (!outputContainer || !searchBar) {
-        console.error("HTML Manquant ou incomplet");
+        console.error("HTML Not here or incomplete");
         return;
     }
 
@@ -65,7 +65,7 @@ async function runSearch(query, page) {
         const data = await fetchMovies("KEYWORDS", query, page);
 
         if (!data || !data.results || data.results.length === 0) {
-            resultsInfo.innerHTML = "<p>Aucun film trouvé</p>";
+            resultsInfo.innerHTML = "<p>No Movie Found</p>";
             outputContainer.innerHTML = "";
             endZone.innerHTML = "";
             isLoading = false;
@@ -77,14 +77,14 @@ async function runSearch(query, page) {
         outputContainer.innerHTML += generateMovieCard({ results: data.results }, data.results.length);
 
         const total = data.total_results || "?";
-        resultsInfo.innerHTML = `Affichage de ${outputContainer.children.length} films sur ${total}`;
+        resultsInfo.innerHTML = `Display  ${outputContainer.children.length} out of ${total}`;
 
         if(page === totalPages){
             endZone.innerHTML = ` <h2 class="end-message"> It seems you have reached the end... </h2>`
         }
 
     } catch (error) {
-        console.error("Erreur pendant la recherche :", error);
+        console.error("Error when searching :", error);
     }
 
     isLoading = false;

@@ -34,7 +34,7 @@ async function fetchMovies(TYPE, ARGS = "", PAGE = 1, YEAR = 2025) {
 
     } else if (TYPE === "YEAR") {
         if (YEAR > UTCYEAR || PAGE <= 0) {
-            throw new Error("L'année et/ou la page sont incorrectes");
+            throw new Error("Year or Page is Incorrect");
 
         } else{
             URL = `${BASE_URL}/discover/movie?api_key=${API_KEY}&primary_release_year=${YEAR}&page=${PAGE}&language=en-US`;

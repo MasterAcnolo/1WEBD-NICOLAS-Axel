@@ -9,7 +9,7 @@ function generateMovieCard(data, limit) {
 
     for (let i = 0; i < limit; i++) {
         
-        // Sécurité : Si on demande 10 films mais qu'il n'y en a que 3, on arrête la boucle
+        // Security: If we ask for 10 movies but there are only 3, we stop the loop
         if (i >= tableauDeFilms.length) {
             break; 
         }
@@ -60,7 +60,7 @@ function generateMovieCard(data, limit) {
 }
 
 document.addEventListener("click", (event) => {
-    const card = event.target.closest(".movie-card"); // Prend l'élément parent le plus proche du click (Card)
+    const card = event.target.closest(".movie-card"); // Takes the parent element closest to the click (Card)
     if (!card) return;
 
     event.preventDefault();
@@ -68,7 +68,7 @@ document.addEventListener("click", (event) => {
     const movieId = card.id.split("movie-")[1];
     localStorage.setItem("MOVIE_ID", movieId);
 
-    window.location.href = "movie.html"; // Rediriger vers la page movie
+    window.location.href = "movie.html"; // Redirect to the movie page
 });
 
 

@@ -115,7 +115,7 @@ function generateMovieDetails(movie) {
         if (movie.vote_average === 0) {
             metascore = `<span style="color: red">Not Rated Yet</span>`;
         } else {
-            const score = Math.round(movie.vote_average * 10); // sur 100
+            const score = Math.round(movie.vote_average * 10); // 100
             let color = "";
 
             if (score < 50) {

@@ -19,7 +19,7 @@ function trendingMovies() {
             trendingContainer.innerHTML = trendingMoviesHTML;
         })
         .catch((error) => {
-            console.error("Erreur pendant le parsing trending :", error);
+            console.error("Error when Parsing for Trending Movies :", error);
         });
 }
 
@@ -42,7 +42,7 @@ async function discoverMovies() {
 
 document.addEventListener("DOMContentLoaded", function () {
     if (!trendingContainer || !discoverContainer) {
-        console.error("HTML Manquant ou incomplet");
+        console.error("HTML Not here or incomplete");
     } else {
         trendingMovies();
         discoverMovies();

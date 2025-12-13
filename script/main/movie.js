@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const movieId = localStorage.getItem("MOVIE_ID");
     if (!movieId){
         window.location.href = "search.html";
-        return console.error("ID introuvable");
+        return console.error("Can't find ID");
     }
 
     const movie = await fetchMovies("ID", movieId);
