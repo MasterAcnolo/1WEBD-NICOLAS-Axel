@@ -14,13 +14,10 @@ function generateMovieDetails(movie) {
     let genres = "Unknown";
     if (movie.genres && movie.genres.length > 0) {
 
-        genres = "";
-
-        if (movie.genres && movie.genres.length > 0) {
-            genres = movie.genres.map(function(e) {
-                return e.name;
-            }).join(", ");
-        }
+        genres = movie.genres.map(function(e) {
+            return e.name;
+        }).join(", ");
+        
     }
 
     // Director
