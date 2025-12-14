@@ -4,7 +4,7 @@
     gap: 30px;
     max-width: 1200px;
     margin: 20vh auto;
-    background: #1a1a1a;
+    background: var(--movie-details-background-color);
     padding: 25px;
     border-radius: 12px;
 }
@@ -78,7 +78,7 @@
 
 /* Carte acteur */
 .actor-card {
-    background: #2a2a2a;
+    background: var(--actors-card-background-color);
     border-radius: 8px;
     padding: 10px;
     width: 120px;
