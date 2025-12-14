@@ -12,35 +12,34 @@
 
 .arrow {
     font-size: 2.5rem;
-    color: white;
-
+    color: var(--button-arrow-text-color);
     cursor: pointer;
 }
 
 /* Load More */
 #load-more {
     padding: 12px 28px;
-    background: linear-gradient(135deg, #ff6a00, #ffb347);
+    background: var(--button-load-bg);
     border: none;
     width: fit-content;
     border-radius: 8px;
-    color: white;
+    color: var(--button-load-text-color);
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: var(--button-load-box-shadow);
     justify-self: center;
     align-self:center;
 }
 
 #load-more:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    box-shadow: var(--button-load-box-shadow-hover);
 }
 
 #load-more:active{
-    transform: scale(0.9);
+    transform: scale(var(--button-load-active-scale));
 }
 
 /* Hamburger Bouton */
@@ -58,7 +57,7 @@
 }
 
 .movie-details-button button {
-    background: none;
+    background: var(--button-movie-bg);
     border: none;
     cursor: pointer;
 }
@@ -68,9 +67,9 @@
 }
 
 .movie-details-button button:hover {
-    transform: scale(1.1);
+    transform: scale(var(--button-movie-hover-scale));
 }
 
 .movie-details-button button:active {
-    transform: scale(0.95);
+    transform: scale(var(--button-movie-active-scale));
 }

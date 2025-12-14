@@ -13,12 +13,12 @@
     border: none;
     outline: none;
     font-size: 1rem;
-    background-color: rgb(229, 229, 229);
-    color: rgb(44, 44, 44);
+    background-color: var(--searchbar-bg);
+    color: var(--searchbar-text-color);
 }
 
 .searchBtn {
-    background: rgb(229, 229, 229);
+    background: var(--searchbar-bg);
     border: none;
     border-radius: 12px;
     padding: 10px;
@@ -35,7 +35,7 @@
 }
 
 .searchBtn:hover {
-    background: rgb(100, 100, 100);
+    background: var(--searchbar-bg-hover);
 }
 
 /* Settings custom pour l'index */
@@ -60,13 +60,13 @@
     border-radius: 12px;
     border: none;
     outline: none;
-    background-color: rgb(229, 229, 229);
-    color: rgb(44, 44, 44);
+    background-color: var(--searchbar-bg);
+    color: var(--searchbar-text-color);
     width: 40%;
 }
 
 .searchSearchBar .searchBtn {
-    background: rgb(229, 229, 229);
+    background: var(--searchbar-bg);
     border: none;
     border-radius: 12px;
     padding: 10px;
@@ -83,14 +83,14 @@
 }
 
 .searchSearchBar .searchBtn:hover {
-    background: rgb(100, 100, 100);
+    background: var(--searchbar-bg-hover);
 }
 
 /* Search Text */
 .results-info {
     font-family: Poppins;
     font-size: 1rem;
-    color: #fff;
+    color: var(--searchbar-results-text);
     margin-bottom: 15px;
     font-weight: 500;
     text-align: center;

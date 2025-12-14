@@ -8,6 +8,7 @@ Available Fonts:
 */
 
 :root{
+
     --default-text-color: #f1f1f1;
     --default-background-color:  #2c2c2c;
 
@@ -19,7 +20,36 @@ Available Fonts:
     --card-text-color: #f1f1f1;
     --card-subtitle-text-color: #bdbdbd;
 
+    /* Search Bar */
+    --searchbar-bg: rgb(229, 229, 229);
+    --searchbar-text-color: rgb(44, 44, 44);
+    --searchbar-bg-hover: rgb(100, 100, 100);
+    --searchbar-results-text: #fff;
+
+
     /* Movie Details */
     --movie-details-background-color: #1a1a1a;
     --actors-card-background-color: #2a2a2a;
+
+    /* Button Variables */
+    /* Arrow (scrollHint) */
+    --button-arrow-text-color: #fff;
+
+    /* Load More Button */
+    --button-load-bg: linear-gradient(135deg, #ff6a00, #ffb347);
+    --button-load-text-color: #fff;
+    --button-load-box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    --button-load-box-shadow-hover: 0 6px 15px rgba(0,0,0,0.25);
+    --button-load-active-scale: 0.9;
+
+    /* Movie Details Button (Likes + Bookmarks) */
+    --button-movie-bg: none;
+    --button-movie-hover-scale: 1.1;
+    --button-movie-active-scale: 0.95;
+    
+    /* Search Bar */
+    --searchbar-bg: rgb(229, 229, 229);
+    --searchbar-text-color: rgb(44, 44, 44);
+    --searchbar-bg-hover: rgb(100, 100, 100);
+    --searchbar-results-text: #fff;
 }
