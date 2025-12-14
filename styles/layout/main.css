@@ -19,19 +19,18 @@
 
 #trending-container,
 #discover-container,
+#search-container,
 #favorites-container,
-#bookmarks-container,
-#search-container {
+#bookmarks-container {
     display: grid;
-    width: 100%;
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(7, 1fr);
+    justify-content: start;
 }
 
 #discover-container{
     overflow: visible;
 }
-
 .trending h2, .discover h2{
     font-family: Montserrat;
     font-size: 2em;
@@ -47,4 +46,46 @@
         font-size: 1.5em;
     }
 
+}
+
+@media (max-width: 1400px) {
+    #trending-container,
+    #discover-container,
+    #search-container,
+    #favorites-container,
+    #bookmarks-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+
+    #trending-container,
+    #discover-container,
+    #search-container,
+    #favorites-container,
+    #bookmarks-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    #trending-container,
+    #discover-container,
+    #search-container,
+    #favorites-container,
+    #bookmarks-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    #trending-container,
+    #discover-container,
+    #search-container,
+    #favorites-container,
+    #bookmarks-container {
+        grid-template-columns: repeat(1fr);
+    }
 }
