@@ -36,6 +36,7 @@ function generateMovieDetails(movie) {
 
     // Actors
     let actorsHtml = "";
+    let actorsCards = "";
     if (movie.credits && movie.credits.cast && movie.credits.cast.length > 0) {
         const topActors = movie.credits.cast.slice(0, 7);
         
@@ -46,16 +47,22 @@ function generateMovieDetails(movie) {
 
             const character = actor.character || "Unknown";
 
-            actorsHtml += `
+            actorsCards += `
                 <div class="actor-card">
                     <img src="${pic}" alt="${actor.name}">
                     <p class="actor-name">${actor.name}</p>
                     <p class="actor-character">${character}</p>
                 </div>
             `;
+
+        actorsHtml = `<div class="actors-container">
+                        <p><strong>Casting</strong></p>
+                        
+                        <div class="actors">${actorsCards} </div>
+                    </div>`
         });
     } else {
-        actorsHtml = "<p>Unknown</p>";
+        actorsHtml = "";
     }
 
 
@@ -170,11 +177,7 @@ function generateMovieDetails(movie) {
             </div>
         </div>
         
-        <div class="actors-container">
-            <p><strong>Casting</strong></p>
-            
-            <div class="actors">${actorsHtml} </div>
-        </div>
+        ${actorsHtml}
 
     </div>
     `;
