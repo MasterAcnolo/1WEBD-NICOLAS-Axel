@@ -26,6 +26,18 @@ Available Fonts:
     --searchbar-bg-hover: rgb(100, 100, 100);
     --searchbar-results-text: #fff;
 
+    /* Hamburger */
+    --hamburger-overlay-bg: rgba(28, 28, 28, 0.821);
+
+    /* Hero */
+    --hero-bg-img: url("../../assets/background.jpg") no-repeat center/cover;
+    --hero-overlay-gradient: linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(18, 18, 18, 0.9) 100%);
+    --hero-title-color: #fff;
+    
+    /* Loader */
+    --loader-bg: #111;
+    --loader-spinner: #f3f3f3;
+    --loader-spinner-top: #c24a00;
 
     /* Movie Details */
     --movie-details-background-color: #1a1a1a;
