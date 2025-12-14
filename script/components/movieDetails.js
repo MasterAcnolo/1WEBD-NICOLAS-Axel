@@ -1,11 +1,13 @@
+
 import {getColor} from "../helpers/color.js"
+import { escapeHTML } from "../helpers/escapeHTML.js";
 
 function generateMovieDetails(movie) {
 
     // Poster
     let poster = "";
     if (movie.poster_path) {
-        poster = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
+        poster = "https://image.tmdb.org/t/p/w500" + escapeHTML(movie.poster_path);
     } else {
         poster = "../../assets/notfound.png";
     }
@@ -13,11 +15,9 @@ function generateMovieDetails(movie) {
     // Genres
     let genres = "Unknown";
     if (movie.genres && movie.genres.length > 0) {
-
         genres = movie.genres.map(function(e) {
-            return e.name;
+            return escapeHTML(e.name);
         }).join(", ");
-        
     }
 
     // Director
@@ -25,7 +25,7 @@ function generateMovieDetails(movie) {
     if (movie.credits && movie.credits.crew) {
         for (let i = 0; i < movie.credits.crew.length; i++) {
             if (movie.credits.crew[i].job === "Director") {
-                director = movie.credits.crew[i].name;
+                director = escapeHTML(movie.credits.crew[i].name);
                 break; //Director found
             }
         }
@@ -36,28 +36,23 @@ function generateMovieDetails(movie) {
     let actorsCards = "";
     if (movie.credits && movie.credits.cast && movie.credits.cast.length > 0) {
         const topActors = movie.credits.cast.slice(0, 7);
-        
         topActors.forEach(actor => {
             const pic = actor.profile_path 
-                ? `https://image.tmdb.org/t/p/w185${actor.profile_path}` 
+                ? `https://image.tmdb.org/t/p/w185${escapeHTML(actor.profile_path)}` 
                 : "../../assets/person-notfound.png";
-
-            const character = actor.character || "Unknown";
-
+            const character = actor.character ? escapeHTML(actor.character) : "Unknown";
             actorsCards += `
                 <div class="actor-card">
-                    <img src="${pic}" alt="${actor.name}">
-                    <p class="actor-name">${actor.name}</p>
+                    <img src="${pic}" alt="${escapeHTML(actor.name)}">
+                    <p class="actor-name">${escapeHTML(actor.name)}</p>
                     <p class="actor-character">${character}</p>
                 </div>
             `;
-
+        });
         actorsHtml = `<div class="actors-container">
                         <p><strong>Casting</strong></p>
-                        
                         <div class="actors">${actorsCards} </div>
                     </div>`
-        });
     } else {
         actorsHtml = "";
     }
@@ -81,31 +76,31 @@ function generateMovieDetails(movie) {
     // Title
     let title = "N/A";
     if (movie.title) {
-        title = movie.title;
+        title = escapeHTML(movie.title);
     }
 
     // Description
     let overview = "No summary available.";
     if (movie.overview) {
-        overview = movie.overview;
+        overview = escapeHTML(movie.overview);
     }
 
     // Duration
     let duration = "N/A";
     if (movie.runtime) {
-        duration = movie.runtime + " min";
+        duration = escapeHTML(movie.runtime) + " min";
     }
 
     // Year
     let year = "N/A";
     if (movie.release_date) {
-        year = movie.release_date.slice(0, 4);
+        year = escapeHTML(movie.release_date.slice(0, 4));
     }
 
     // Revenue
     let revenue = "N/A";
     if (typeof movie.revenue === "number" && movie.revenue > 0) {
-        revenue = movie.revenue.toLocaleString() + " $"; // toLocaleString format = space between number for money
+        revenue = escapeHTML(movie.revenue.toLocaleString()) + " $";
     }
 
     // Classification

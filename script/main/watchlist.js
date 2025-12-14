@@ -1,5 +1,7 @@
+
 import { fetchMovies } from "../services/fetch.js";
 import { bookmarkIDName, likeIDName } from "../common.js";
+import { escapeHTML } from "../helpers/escapeHTML.js";
 
 const favMovies = JSON.parse(localStorage.getItem(likeIDName)) || [];
 const bookmarkMovies = JSON.parse(localStorage.getItem(bookmarkIDName)) || [];
@@ -11,7 +13,7 @@ async function renderMovieList(ids, container, emptyMessage) {
     if (!container) return;
 
     if (ids.length === 0) {
-        container.innerHTML = `<p>${emptyMessage}</p>`;
+        container.innerHTML = `<p>${escapeHTML(emptyMessage)}</p>`;
         return;
     }
 
@@ -27,10 +29,13 @@ function createMovieCard(movie) {
     card.className = "movie-card";
     card.id = `movie-${movie.id}`;
 
+    const poster = movie.poster_path ? `https://image.tmdb.org/t/p/w500/${escapeHTML(movie.poster_path)}` : "../../assets/notfound.png";
+    const title = movie.title ? escapeHTML(movie.title) : "Unknown";
+    const year = movie.release_date ? escapeHTML(movie.release_date.slice(0, 4)) : "?";
     card.innerHTML = `
-        <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}">
-        <h3>${movie.title}</h3>
-        <p>${movie.release_date?.slice(0, 4) || "?"}</p>
+        <img src="${poster}">
+        <h3>${title}</h3>
+        <p>${year}</p>
     `;
 
     return card;

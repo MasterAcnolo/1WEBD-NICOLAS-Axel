@@ -1,5 +1,6 @@
 import { fetchMovies } from "../services/fetch.js";
 import {generateMovieCard} from "../components/moviecard.js";
+import { escapeHTML } from "../helpers/escapeHTML.js";
 
 const searchBar = document.getElementById("searchInput");
 const outputContainer = document.getElementById("search-container");
@@ -65,7 +66,7 @@ async function runSearch(query, page) {
         const data = await fetchMovies("KEYWORDS", query, page);
 
         if (!data || !data.results || data.results.length === 0) {
-            resultsInfo.innerHTML = "<p>No Movie Found</p>";
+            resultsInfo.innerHTML = `<p>${escapeHTML("No Movie Found")}</p>`;
             outputContainer.innerHTML = "";
             endZone.innerHTML = "";
             isLoading = false;
@@ -77,10 +78,10 @@ async function runSearch(query, page) {
         outputContainer.innerHTML += generateMovieCard({ results: data.results }, data.results.length);
 
         const total = data.total_results || "?";
-        resultsInfo.innerHTML = `Display  ${outputContainer.children.length} out of ${total}`;
+        resultsInfo.innerHTML = `Display  ${escapeHTML(outputContainer.children.length)} out of ${escapeHTML(total)}`;
 
         if(page === totalPages){
-            endZone.innerHTML = ` <h2 class="end-message"> It seems you have reached the end... </h2>`
+            endZone.innerHTML = `<h2 class="end-message">It seems you have reached the end...</h2>`
         }
 
     } catch (error) {
