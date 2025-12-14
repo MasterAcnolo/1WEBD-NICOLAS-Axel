@@ -53,5 +53,5 @@
 }
 
 .movie-card:active{
-    transform: translateY(0) scale(1.05);
+    transform: translateY(0) scale(var(--button-movie-active-scale));
 }
