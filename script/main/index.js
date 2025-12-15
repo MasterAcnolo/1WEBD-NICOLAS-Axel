@@ -29,15 +29,19 @@ function trendingMovies() {
 async function discoverMovies() {
     const movies = await getDiscoverMovies(max);
 
+    if (!movies || movies.length === 0) {
+        loadMoreButton.style.display = "none";
+        return;
+    } else {
+        loadMoreButton.style.display = "";
+    }
+
     movies.forEach(film => {
         const html = generateMovieCard({ results: [film] }, 1);
-
         const temp = document.createElement("div");
         temp.innerHTML = html;
-
         const card = temp.querySelector(".movie-card");
         card.classList.add("fade-slide-in");
-
         discoverContainer.appendChild(card);
     });
 }
