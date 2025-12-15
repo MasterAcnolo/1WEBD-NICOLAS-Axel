@@ -1,6 +1,6 @@
 import { fetchMovies } from "../services/fetch.js";
 import {generateMovieCard} from "../components/moviecard.js";
-import {getMaxBySize} from "../helpers/pagination.js";
+import {getMaxBySize, getGridColumns} from "../helpers/pagination.js";
 import { getDiscoverMovies } from "../helpers/buffer.js";
 
 const trendingContainer = document.getElementById("trending-container");
@@ -13,9 +13,12 @@ const searchBarButton = document.getElementById("searchBtn");
 const max = getMaxBySize();
 
 function trendingMovies() {
+
+    const trendingCardAmount = getGridColumns(trendingContainer);
+
     fetchMovies("TRENDING")
         .then((data) => {
-            const trendingMoviesHTML = generateMovieCard(data, max - 1);
+            const trendingMoviesHTML = generateMovieCard(data, trendingCardAmount);
             trendingContainer.innerHTML = trendingMoviesHTML;
         })
         .catch((error) => {

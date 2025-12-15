@@ -30,29 +30,27 @@
 #discover-container{
     overflow: visible;
 }
+
+#trending-container{
+    grid-template-columns: repeat(6, 1fr);
+}
+
 .trending h2, .discover h2{
     font-family: Montserrat;
     font-size: 2em;
     justify-self: center;
 }
 
-@media (max-width: 469px) {
-    .trending, .discover, .search{
-        padding: 0;
-    }
-
-    .trending h2, .discover h2{
-        font-size: 1.5em;
-    }
-
-}
-
 @media (max-width: 1400px) {
-    #trending-container,
     #discover-container,
     #search-container,
     #favorites-container,
     #bookmarks-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+
+    #trending-container{
         grid-template-columns: repeat(5, 1fr);
     }
 }
@@ -87,4 +85,15 @@
     #bookmarks-container {
         grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 469px) {
+    .trending, .discover, .search{
+        padding: 0;
+    }
+
+    .trending h2, .discover h2{
+        font-size: 1.5em;
+    }
+
 }
