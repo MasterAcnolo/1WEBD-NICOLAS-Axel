@@ -10,6 +10,8 @@
     padding: 10px 15px;
     border-radius: 12px;
     width: 400px;
+    border: none;
+    outline: none;
     font-size: 1rem;
     background-color: var(--searchbar-bg);
     color: var(--searchbar-text-color);
