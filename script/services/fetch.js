@@ -1,8 +1,6 @@
 import { API_KEY } from "../APIKEY.js";
-const DATE = new Date();
 
 const BASE_URL = "https://api.themoviedb.org/3";
-
 
 // TYPE will be ID or KEYWORDS. ID will search on the ID, and KEYWORDS a search via keywords.
 async function fetchMovies(TYPE, ARGS = "", PAGE = 1, YEAR = 2025) {
