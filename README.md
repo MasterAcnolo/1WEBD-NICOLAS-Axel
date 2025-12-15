@@ -20,12 +20,15 @@ Movie Loader est une application web moderne permettant de rechercher, découvri
    cd 1WEBD-NICOLAS-Axel
    ```
 2. **Récupérer une clé API TMDB**
+
    - Créez un compte sur [TMDB](https://www.themoviedb.org/).
    - Générez une clé API.
    - Créez un fichier `script/APIKEY.js` :
+
      ```js
      export const API_KEY = "VOTRE_CLE_API";
      ```
+
 3. **Lancer le projet**
    - Ouvrez `index.html` dans votre navigateur (ou servez le dossier avec un serveur local pour éviter les problèmes CORS).
 
