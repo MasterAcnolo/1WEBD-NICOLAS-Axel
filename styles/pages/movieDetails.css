@@ -15,19 +15,19 @@
 .movie-details {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 20vh auto;
+    gap: 14px;
+    max-width: 900px;
+    margin: 12vh auto;
     background: var(--movie-details-background-color);
-    padding: 25px;
-    border-radius: 12px;
+    padding: 16px 18px;
+    border-radius: 10px;
     position: relative;
     z-index: 1;
 }
 
 .first-line {
     display: flex;
-    gap: 30px;
+    gap: 18px;
     flex-wrap: wrap;
 }
 
@@ -38,8 +38,8 @@
 }
 
 .poster {
-    width: 350px;
-    border-radius: 10px;
+    width: 210px;
+    border-radius: 8px;
 }
 
 .movie-right {
@@ -51,24 +51,27 @@
 }
 
 .movie-details h1 {
-    margin: 0 0 10px;
-    font-size: 2.2rem;
+    margin: 0 0 7px;
+    font-size: 1.4rem;
 }
 
 .genres {
     opacity: 0.7;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    font-size: 0.95em;
 }
 
 .overview {
-    margin-bottom: 20px;
-    line-height: 1.5;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    font-size: 0.97em;
 }
 
 .info-grid {
     display: flex;
     flex-direction: column;
-    gap: 10px 20px;
+    gap: 6px 10px;
+    font-size: 0.97em;
 }
 
 .info-grid p {
@@ -82,8 +85,8 @@
 
 /* Casting */
 .actors-container > p {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
 }
 
 .actors {
@@ -95,11 +98,11 @@
 
 .actor-card {
     background: var(--actors-card-background-color);
-    border-radius: 8px;
-    padding: 10px;
+    border-radius: 7px;
+    padding: 7px;
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
-    max-width: 150px;
+    max-width: 110px;
 }
 
 .actor-card:hover {
@@ -109,20 +112,20 @@
 
 .actor-card img {
     width: 100%;
-    border-radius: 8px;
-    height: 200px;
+    border-radius: 7px;
+    height: 110px;
     object-fit: cover;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .actor-name {
     font-weight: bold;
-    font-size: 0.9rem;
-    margin-bottom: 4px;
+    font-size: 0.82rem;
+    margin-bottom: 2px;
 }
 
 .actor-character {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     opacity: 0.7;
 }
 
