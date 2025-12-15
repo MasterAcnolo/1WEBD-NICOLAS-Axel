@@ -91,11 +91,18 @@ function generateMovieDetails(movie) {
         duration = escapeHTML(movie.runtime) + " min";
     }
 
-    // Year
+
+    // Year et Release Date
     let year = "N/A";
+    let releaseDate = "N/A";
+
     if (movie.release_date) {
-        year = escapeHTML(movie.release_date.slice(0, 4));
+        const date = new Date(movie.release_date);
+
+        year = date.getFullYear();
+        releaseDate = date.toLocaleDateString("en-US");
     }
+
 
     // Revenue
     let revenue = "N/A";
@@ -154,6 +161,8 @@ function generateMovieDetails(movie) {
                 <div class="info-grid">
 
                     <p><strong>Duration:</strong> ${duration}</p>
+
+                    <p><strong>Release date:</strong> ${releaseDate}</p>
 
                     <p><strong>Director:</strong> ${director}</p>
 
