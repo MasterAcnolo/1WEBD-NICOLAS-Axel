@@ -19,6 +19,7 @@
 - **Animations** : Apparition fluide des cards et des conteneurs (fade/slide), transitions modernes.
 - **Loader animé** : Affichage d'un loader/spinner lors des chargements.
 - **Responsive** : Interface adaptée à tous les écrans (mobile, tablette, desktop).
+- **Menu Hamburger** : Pour une meilleure navigation sur mobile.
 - **Accessibilité avancée** :
   - Navigation clavier et focus visible
   - Aria-live pour les résultats dynamiques
