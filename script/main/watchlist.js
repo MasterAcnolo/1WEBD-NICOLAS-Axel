@@ -32,7 +32,7 @@ function createMovieCard(movie) {
     const title = movie.title ? escapeHTML(movie.title) : "Unknown";
     const year = movie.release_date ? escapeHTML(movie.release_date.slice(0, 4)) : "?";
     card.innerHTML = `
-        <img src="${poster}">
+        <img src="${poster}" alt="${movie.title}">
         <h3>${title}</h3>
         <p>${year}</p>
     `;

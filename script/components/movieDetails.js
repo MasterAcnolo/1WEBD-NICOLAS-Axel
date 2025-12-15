@@ -136,7 +136,7 @@ function generateMovieDetails(movie) {
 
         <div class="first-line">
             <div class="movie-left" style="display: flex; flex-direction: column;">
-                <img src="${poster}" class="poster">
+                <img src="${poster}" class="poster" alt="Movie Poster ${title}">
             </div>
 
             <div class="movie-right">
@@ -145,12 +145,12 @@ function generateMovieDetails(movie) {
                     <h1>${title}<span class="year">(${year})</span></h1>
 
                     <div class="movie-details-button">
-                        <button class="fav-btn" data-id="${movie.id}">
-                            <img class="fav-img" src="">
+                        <button class="fav-btn" data-id="${movie.id} aria-label="Add ${title} to favorites">
+                            <img class="fav-img" src="" alt="">
                         </button>
 
-                        <button class="bookmark-btn" data-id="${movie.id}">
-                            <img class="book-img" src="">
+                        <button class="bookmark-btn" data-id="${movie.id} aria-label="Bookmark ${title}"">
+                            <img class="book-img" src="" alt="">
                         </button>
                     </div>
                 </div>
