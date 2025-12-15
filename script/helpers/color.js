@@ -7,7 +7,7 @@ function getColor(score){
     } else if (score < 75) {
         color = "orange";
     } else {
-        color = "green";
+        color = "#2ad457";
     }
 
     return color
