@@ -99,7 +99,7 @@
     padding: 10px;
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
-    max-width: 250px;
+    max-width: 150px;
 }
 
 .actor-card:hover {
@@ -179,6 +179,12 @@
 
 
 @media (max-width: 730px) {
+    .actors {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 374px) {
     .actors {
         grid-template-columns: repeat(2, 1fr);
     }
