@@ -1,6 +1,5 @@
 import { fetchMovies } from "../services/fetch.js";
 import { generateMovieDetails } from "../components/movieDetails.js";
-import { bookmarkIDName, likeIDName } from "../common.js";
 import { getLikes, getBookmarks, toggleLike, toggleBookmark } from "../helpers/storage.js";
 
 document.addEventListener("DOMContentLoaded", async () => {

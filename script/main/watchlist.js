@@ -1,4 +1,3 @@
-
 import { fetchMovies } from "../services/fetch.js";
 import { bookmarkIDName, likeIDName } from "../common.js";
 import { escapeHTML } from "../helpers/escapeHTML.js";
