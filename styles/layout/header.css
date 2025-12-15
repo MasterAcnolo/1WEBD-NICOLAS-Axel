@@ -41,6 +41,28 @@ header nav a{
     text-decoration: none;
 }
 
+/* Hover effect logo+ header title*/
+.header-home-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: filter 0.2s, color 0.2s;
+    color: var(--default-text-color);
+}
+.header-home-link:hover,
+.header-home-link:focus {
+    filter: brightness(1.1) drop-shadow(0 2px 4px var(--header-title-hover-color));
+}
+.header-home-link h1 {
+    color: var(--default-text-color);
+    transition: color 0.2s;
+}
+.header-home-link:hover h1,
+.header-home-link:focus h1 {
+    color: var(--header-title-hover-color);
+}
+
 @media (max-width: 823px) {
     header nav{
         font-size: 1.3em;
