@@ -1,7 +1,7 @@
 .movie-details {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     max-width: 1200px;
     margin: 20vh auto;
     background: var(--movie-details-background-color);
@@ -71,20 +71,19 @@
 }
 
 .actors {
-    display: flex;
+    display: grid;
     gap: 15px;
-    flex-wrap: wrap;
+    width: 100%;
+    grid-template-columns: repeat(7, 1fr);
 }
 
-/* Carte acteur */
 .actor-card {
     background: var(--actors-card-background-color);
     border-radius: 8px;
     padding: 10px;
-    width: 120px;
     text-align: center;
-    flex-shrink: 0;
     transition: transform 0.2s, box-shadow 0.2s;
+    max-width: 250px;
 }
 
 .actor-card:hover {
@@ -95,7 +94,7 @@
 .actor-card img {
     width: 100%;
     border-radius: 8px;
-    height: 150px;
+    height: 200px;
     object-fit: cover;
     margin-bottom: 8px;
 }
@@ -117,11 +116,24 @@
     margin-left: 10px;
 }
 
+@media (max-width: 1400px) {
+    .actors {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
 /* Responsive */
 @media(max-width: 1150px) {
     .movie-details h1 {
         font-size: 1.7em;
     }
+}
+
+@media (max-width: 1024px) {
+    .actors {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
 }
 
 @media(max-width: 800px) {
@@ -141,19 +153,17 @@
     }
 
     .movie-details *:not(h1) {
-        font-size: 100%;
-    }
-
-    .actors {
-        justify-content: center;
-    }
-
-    .actor-card {
-        width: 100px;
-        padding: 8px;
+        font-size: 95%;
     }
 
     .actor-card img {
         height: 130px;
+    }
+}
+
+
+@media (max-width: 730px) {
+    .actors {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

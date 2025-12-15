@@ -1,6 +1,6 @@
-
 import {getColor} from "../helpers/color.js"
 import { escapeHTML } from "../helpers/escapeHTML.js";
+import { maxActorAmount } from "../common.js";
 
 function generateMovieDetails(movie) {
 
@@ -35,7 +35,7 @@ function generateMovieDetails(movie) {
     let actorsHtml = "";
     let actorsCards = "";
     if (movie.credits && movie.credits.cast && movie.credits.cast.length > 0) {
-        const topActors = movie.credits.cast.slice(0, 7);
+        const topActors = movie.credits.cast.slice(0, maxActorAmount); // Actor Amount
         topActors.forEach(actor => {
             const pic = actor.profile_path 
                 ? `https://image.tmdb.org/t/p/w185${escapeHTML(actor.profile_path)}` 

@@ -17,4 +17,6 @@ searchLinks.forEach(link => {
 const bookmarkIDName = "BOOKMARKS"
 const likeIDName = "LIKES"
 
-export {bookmarkIDName, likeIDName}
+const maxActorAmount = 14;
+
+export {bookmarkIDName, likeIDName, maxActorAmount}
