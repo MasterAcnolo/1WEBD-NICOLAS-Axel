@@ -89,7 +89,7 @@
 
 @media (max-width: 469px) {
     .trending, .discover, .search{
-        padding: 0;
+        padding: 20px 0px;
     }
 
     .trending h2, .discover h2{
