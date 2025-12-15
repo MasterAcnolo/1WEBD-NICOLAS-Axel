@@ -62,8 +62,12 @@
     cursor: pointer;
 }
 
-.movie-details-button button img{
-    width: 30px;
+.movie-details-button .bookmark-btn img{
+    width: 25px;
+}
+
+.movie-details-button .fav-btn img{
+    width: 33px;
 }
 
 .movie-details-button button:hover {
