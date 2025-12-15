@@ -1,9 +1,10 @@
 import {getColor} from "../helpers/color.js"
 import { escapeHTML } from "../helpers/escapeHTML.js";
 import { maxActorAmount } from "../common.js";
+import { fetchMovies } from "../services/fetch.js";
+import { generateMovieCard } from "./moviecard.js";
 
-
-function generateMovieDetails(movie) {
+async function generateMovieDetails(movie) {
     
     // Backdrop
     let backdrop = '';
@@ -138,6 +139,30 @@ function generateMovieDetails(movie) {
         }
     }
 
+    // COLLECTION
+    let collectionHtml = "";
+    if (movie?.belongs_to_collection?.id) { // ? add possibility (If i don't put this, it crash)
+        try {
+            const collectionData = await fetchMovies("COLLECTION", movie.belongs_to_collection.id);
+
+            const otherMovies = collectionData.parts.filter(f => f.id !== movie.id); // only get movies != selected movie
+
+            if (otherMovies.length > 0) {
+
+                const data = { results: otherMovies };
+                const collectionCards = generateMovieCard(data, otherMovies.length);
+
+                collectionHtml = `
+                    <div class="collection-container" id="collection-container">
+                        <p><strong>Other movies in this collection:</strong></p>
+                        <div class="collection-movies">${collectionCards}</div>
+                    </div>
+                `;
+            }
+        } catch (err) {
+            console.error("Error fetching collection:", err);
+        }
+    }
 
     return `
     ${backdrop}
@@ -154,11 +179,11 @@ function generateMovieDetails(movie) {
                     <h1>${title}<span class="year">(${year})</span></h1>
 
                     <div class="movie-details-button">
-                        <button class="fav-btn" data-id="${movie.id} aria-label="Add ${title} to favorites">
+                        <button class="fav-btn" data-id="${movie.id}" aria-label="Add ${title} to favorites">
                             <img class="fav-img" src="" alt="">
                         </button>
 
-                        <button class="bookmark-btn" data-id="${movie.id} aria-label="Bookmark ${title}"">
+                        <button class="bookmark-btn" data-id="${movie.id}" aria-label="Bookmark ${title}">
                             <img class="book-img" src="" alt="">
                         </button>
                     </div>
@@ -188,7 +213,7 @@ function generateMovieDetails(movie) {
         </div>
         
         ${actorsHtml}
-
+        ${collectionHtml}
     </div>
     `;
 }

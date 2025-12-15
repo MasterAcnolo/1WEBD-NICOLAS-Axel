@@ -29,6 +29,9 @@ async function fetchMovies(TYPE, ARGS = "", PAGE = 1, YEAR = 2025) {
         URL = `${BASE_URL}/movie/${ENCODEDARGS}?api_key=${API_KEY}&language=en-US&append_to_response=credits`;
 
 
+    }  else if (TYPE === "COLLECTION") {
+        URL = `${BASE_URL}/collection/${ENCODEDARGS}?api_key=${API_KEY}&language=en-US`;
+        
     } else {
         throw new Error("An Error Occured when fetching, Incorrect ARGS");
     }

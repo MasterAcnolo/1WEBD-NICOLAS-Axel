@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const container = document.getElementById("movie-container");
-    container.innerHTML = generateMovieDetails(movie);
+    container.innerHTML = await generateMovieDetails(movie);
 
     const likeBtn = container.querySelector(".fav-btn");
     const bookBtn = container.querySelector(".bookmark-btn");
