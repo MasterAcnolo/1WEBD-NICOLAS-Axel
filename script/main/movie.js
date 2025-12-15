@@ -4,12 +4,13 @@ import { bookmarkIDName, likeIDName } from "../common.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
     const movieId = localStorage.getItem("MOVIE_ID");
-    if (!movieId){
+    const movie = await fetchMovies("ID", movieId);
+
+    if (!movieId || !movie){
         window.location.href = "search.html";
-        return console.error("Can't find ID");
+        return console.error("Can't find ID or Movie");
     }
 
-    const movie = await fetchMovies("ID", movieId);
     const container = document.getElementById("movie-container");
     container.innerHTML = generateMovieDetails(movie);
 
