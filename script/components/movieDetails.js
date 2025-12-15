@@ -2,7 +2,15 @@ import {getColor} from "../helpers/color.js"
 import { escapeHTML } from "../helpers/escapeHTML.js";
 import { maxActorAmount } from "../common.js";
 
+
 function generateMovieDetails(movie) {
+    
+    // Backdrop
+    let backdrop = '';
+    if (movie.backdrop_path) {
+        const url = `https://image.tmdb.org/t/p/original${escapeHTML(movie.backdrop_path)}`;
+        backdrop = `<div class="movie-backdrop" style="background-image:url('${url}')"></div>`;
+    }
 
     // Poster
     let poster = "";
@@ -132,6 +140,7 @@ function generateMovieDetails(movie) {
 
 
     return `
+    ${backdrop}
     <div class="movie-details">
 
         <div class="first-line">

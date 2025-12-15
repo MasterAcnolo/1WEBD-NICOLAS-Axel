@@ -1,3 +1,17 @@
+
+.movie-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px) brightness(0.5);
+    z-index: 0;
+    pointer-events: none;
+}
+
 .movie-details {
     display: flex;
     flex-direction: column;
@@ -7,6 +21,8 @@
     background: var(--movie-details-background-color);
     padding: 25px;
     border-radius: 12px;
+    position: relative;
+    z-index: 1;
 }
 
 .first-line {
