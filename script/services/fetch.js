@@ -1,11 +1,10 @@
 import { API_KEY } from "../APIKEY.js";
 const DATE = new Date();
-const UTCYEAR = DATE.getFullYear() + 1;
 
 const BASE_URL = "https://api.themoviedb.org/3";
 
 
-// TYPE sera soit ID soit KEYWORDS. ID fera une recherche sur l'ID, et KEYWORDS une recherche via mot clés
+// TYPE will be ID or KEYWORDS. ID will search on the ID, and KEYWORDS a search via keywords.
 async function fetchMovies(TYPE, ARGS = "", PAGE = 1, YEAR = 2025) {
     let URL = "";
     const ENCODEDARGS = encodeURIComponent(ARGS);
@@ -15,7 +14,6 @@ async function fetchMovies(TYPE, ARGS = "", PAGE = 1, YEAR = 2025) {
     
         
     } else if (TYPE === "TRENDING") {
-        // tendances du jour
         URL = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&language=en-US&page=${PAGE}`;
 
 
@@ -24,7 +22,6 @@ async function fetchMovies(TYPE, ARGS = "", PAGE = 1, YEAR = 2025) {
 
 
     }else if (TYPE === "POPULAR") {
-        // films populaires
         URL = `${BASE_URL}/movie/popular?api_key=${API_KEY}&language=en-US&page=${PAGE}`;
     
         
@@ -32,30 +29,21 @@ async function fetchMovies(TYPE, ARGS = "", PAGE = 1, YEAR = 2025) {
         URL = `${BASE_URL}/movie/${ENCODEDARGS}?api_key=${API_KEY}&language=en-US&append_to_response=credits`;
 
 
-    } else if (TYPE === "YEAR") {
-        if (YEAR > UTCYEAR || PAGE <= 0) {
-            throw new Error("Year or Page is Incorrect");
-
-        } else{
-            URL = `${BASE_URL}/discover/movie?api_key=${API_KEY}&primary_release_year=${YEAR}&page=${PAGE}&language=en-US`;
-        }
-
-    
     } else {
-        throw new Error("Erreur d'arguments");
+        throw new Error("An Error Occured when fetching, Incorrect ARGS");
     }
 
     try {
         const response = await fetch(URL);
         if (!response.ok) {
-            throw new Error("Erreur HTTP " + response.status);
+            throw new Error("HTTP ERROR" + response.status);
         }
 
         const data = await response.json();
         return data;
 
     } catch (err) {
-        console.error("Erreur dans fetchMovies :", err);
+        console.error("Fetch Movies Error :", err);
         return null;
     }
 }
