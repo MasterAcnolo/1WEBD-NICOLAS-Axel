@@ -31,9 +31,10 @@ html, body {
 }
 
 /* Accessibility : focus visible */
-a:focus, button:focus, .link:focus, .searchBtn:focus {
+a:focus-visible, button:focus-visible, .link:focus-visible, .searchBtn:focus-visible {
     outline: 5px solid var(--accessibility-focus-color);
     outline-offset: 2px;
+    border-radius: 7px;
     box-shadow: 0 0 0 4px rgba(88,166,255,0.2);
     z-index: 20;
 }
