@@ -18,17 +18,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const likeBtn = container.querySelector(".fav-btn");
     const bookBtn = container.querySelector(".bookmark-btn");
 
-    const toggleLocalStorage = (key, id) => {
-        let items = JSON.parse(localStorage.getItem(key) || "[]");
-        if (items.includes(id)) {
-            items = items.filter(i => i !== id); // remove
-        } else {
-            items.push(id); // add
-        }
-        localStorage.setItem(key, JSON.stringify(items));
-        return items.includes(id);
-    };
-
     if (likeBtn) {
         const id = parseInt(likeBtn.dataset.id, 10); // Convert Int using 10 base (security)
         const updateLikeIcon = () => {
