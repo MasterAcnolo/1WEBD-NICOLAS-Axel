@@ -29,8 +29,8 @@ Available Fonts:
     --hero-title-color: #fff;
     
     /* Movie Details */
-    --movie-details-background-color: #1a1a1a;
-    --actors-card-background-color: #2a2a2a;
+    --movie-details-background-color: rgba(26, 26, 26, 0.463);
+    --actors-card-background-color: #55555579;
 
     /* Search Bar */
     --searchbar-bg: rgb(229, 229, 229);
