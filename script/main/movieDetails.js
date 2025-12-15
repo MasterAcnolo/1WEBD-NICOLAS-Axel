@@ -1,6 +1,7 @@
 import { fetchMovies } from "../services/fetch.js";
 import { generateMovieDetails } from "../components/movieDetails.js";
 import { bookmarkIDName, likeIDName } from "../common.js";
+import { getLikes, getBookmarks, toggleLike, toggleBookmark } from "../helpers/storage.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
     const movieId = localStorage.getItem("MOVIE_ID");
@@ -29,30 +30,32 @@ document.addEventListener("DOMContentLoaded", async () => {
     };
 
     if (likeBtn) {
-    const id = parseInt(likeBtn.dataset.id, 10);
-    likeBtn.querySelector(".fav-img").src = JSON.parse(localStorage.getItem(likeIDName) || "[]").includes(id)
-        ? "../../assets/icon/hearth-filled.png"
-        : "../../assets/icon/heart.png";
+        const id = parseInt(likeBtn.dataset.id, 10); // Convert Int using 10 base (security)
+        const updateLikeIcon = () => {
+            likeBtn.querySelector(".fav-img").src = getLikes().includes(id)
+                ? "../../assets/icon/hearth-filled.png"
+                : "../../assets/icon/heart.png";
+        };
+        updateLikeIcon();
 
-    likeBtn.addEventListener("click", () => {
-        const active = toggleLocalStorage(likeIDName, id);
-        likeBtn.querySelector(".fav-img").src = active
-            ? "../../assets/icon/hearth-filled.png"
-            : "../../assets/icon/heart.png";
-    });
+        likeBtn.addEventListener("click", () => {
+            toggleLike(id);
+            updateLikeIcon();
+        });
     }
 
     if (bookBtn) {
         const id = parseInt(bookBtn.dataset.id, 10);
-        bookBtn.querySelector(".book-img").src = JSON.parse(localStorage.getItem(bookmarkIDName) || "[]").includes(id)
-            ? "../../assets/icon/bookmark-filled.png"
-            : "../../assets/icon/bookmark.png";
-
-        bookBtn.addEventListener("click", () => {
-            const active = toggleLocalStorage(bookmarkIDName, id);
-            bookBtn.querySelector(".book-img").src = active
+        const updateBookmarkIcon = () => {
+            bookBtn.querySelector(".book-img").src = getBookmarks().includes(id)
                 ? "../../assets/icon/bookmark-filled.png"
                 : "../../assets/icon/bookmark.png";
+        };
+        updateBookmarkIcon();
+
+        bookBtn.addEventListener("click", () => {
+            toggleBookmark(id);
+            updateBookmarkIcon();
         });
     }
 
