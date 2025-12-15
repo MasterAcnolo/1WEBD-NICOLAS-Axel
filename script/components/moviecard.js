@@ -40,7 +40,7 @@ function generateMovieCard(data, limit) {
 
         let badgeRating = "";
         if (note > 0){
-            badgeRating = `<div class="rating-badge" style="color: ${badgeColor}; border: 2px solid ${badgeColor}">${escapeHTML(note)}</div>`
+            badgeRating = `<div class="rating-badge" style="color: ${badgeColor}; border: 2px solid ${badgeColor}">${escapeHTML(note.toFixed(1))}</div>`
         }
 
         htmlContent += `
