@@ -6,8 +6,6 @@
  
 </div>
 
----
-
 ## Fonctionnalités principales
 
 ### Recherche & découverte
@@ -53,8 +51,6 @@
 - Balises `alt` sur toutes les images
 - Structure HTML sémantique et contrastes respectés
 
----
-
 ## Installation
 
 1. **Cloner le dépôt**
@@ -75,8 +71,6 @@
 3. **Lancer le projet**
    - Ouvrez `index.html` dans votre navigateur (ou servez le dossier avec un serveur local pour éviter les problèmes CORS).
 
----
-
 ## Utilisation
 
 - **Accueil** : Affiche les films tendances et la section découverte.
@@ -84,16 +78,12 @@
 - **Détails** : Cliquez sur un film pour voir sa fiche détaillée (infos enrichies, date formatée, casting, etc...).
 - **Watchlist/Favoris** : Ajoutez/retirez des films à votre watchlist ou favoris via les boutons dédiés, possibilité de réordonner la watchlist (si activé).
 
----
-
 ## Technologies utilisées
 
 - **HTML5/CSS3** (Flexbox, Grid, variables CSS, animations, transitions)
 - **JavaScript (ES6 modules)**
 - **API TMDB**
 - **AOS (Animate On Scroll)** pour les animations d’apparition
-
----
 
 ## Structure du projet
 
@@ -103,15 +93,11 @@
 - `styles/` : styles globaux, variables et composants
 - `assets/` : images et ressources statiques
 
----
-
 ## Personnalisation
 
 - **Palette de couleurs** et polices personnalisables dans `styles/variables.css`.
 - **Composants réutilisables** dans `script/components/` ainsi que dans `styles/components/`.
 - **Ajout de nouvelles pages** possible en suivant la structure existante et les composants réutilisables.
-
----
 
 ## Bonnes pratiques
 
@@ -120,8 +106,6 @@
 - Responsive design et accessibilité (balises alt, aria, focus, contrastes).
 - Centralisation des constantes et variables partagées.
 - Respect des standards UX/UI modernes.
-
----
 
 ## Licence
 
