@@ -42,7 +42,7 @@ function generateMovieCard(data, limit, aos = true) {
             badgeRating = `<div class="rating-badge" style="color: ${badgeColor}; border: 2px solid ${badgeColor}">${escapeHTML(note.toFixed(1))}</div>`
         }
 
-        const AOS = aos ? 'data-aos="zoom-in"' : '';
+        const AOS = aos ? 'data-aos="zoom-in" data-aos-duration="300" data-aos-easing="ease"' : '';
 
         htmlContent += `
             <a href="movie.html" target="_blank" class="movie-card" id="movie-${escapeHTML(film.id)}" ${AOS}>
