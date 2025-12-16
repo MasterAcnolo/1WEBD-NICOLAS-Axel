@@ -36,6 +36,8 @@ Available Fonts:
 
     --not-out-color: #e33100e5;
 
+    --animation-type: cubic-bezier(.4,0,.2,1);
+
     /* Search Bar */
     --searchbar-bg: rgb(229, 229, 229);
     --searchbar-text-color: rgb(44, 44, 44);

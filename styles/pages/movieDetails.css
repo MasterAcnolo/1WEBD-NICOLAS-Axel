@@ -1,5 +1,7 @@
 /* BACKDROP */
 .movie-backdrop {
+    opacity: 0;
+    animation: blurBackdropIn 1.2s ease-out 0.1s forwards;
     position: fixed;
     top: 0;
     left: 0;
@@ -14,6 +16,8 @@
 
 /* DETAILS CONTAINER */
 .movie-details {
+    opacity: 0;
+    animation: fadeDetailsIn 0.85s var(--animation-type) 0.25s forwards;
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -34,6 +38,8 @@
 }
 
 .movie-left {
+    opacity: 0;
+    animation: fadeDetailsIn 0.85s var(--animation-type) 0.35s forwards;
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
@@ -49,6 +55,9 @@
 }
 
 .movie-right > div {
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadePosterIn 0.7s var(--animation-type) 0.45s forwards;
     margin-bottom: 15px;
 }
 
@@ -64,12 +73,16 @@
 }
 
 .overview {
+    opacity: 0;
+    animation: fadeIn 0.7s var(--animation-type) 0.7s forwards;
     margin-bottom: 12px;
     line-height: 1.4;
     font-size: 0.97em;
 }
 
 .info-grid {
+    opacity: 0;
+    animation: fadeIn 0.7s var(--animation-type) 0.85s forwards;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -86,9 +99,15 @@
 }
 
 /* CASTING */
+
 .actors-container > p {
     font-size: 1.05rem;
     margin-bottom: 10px;
+}
+
+.actors-container{
+    opacity: 0;
+    animation: fadeDetailsIn 0.7s var(--animation-type) 1s forwards;
 }
 
 .actor-card {
@@ -97,7 +116,7 @@
     padding: 7px;
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
-    max-width: 110px;
+    width: 110px;
 }
 
 .actor-card:hover {
@@ -132,6 +151,8 @@
 
 /* COLLECTION */
 .collection-container {
+    opacity: 0;
+    animation: fadeDetailsIn 0.85s var(--animation-type) 1.7s forwards;
     width: 100%;
     margin-top: 20px;
 }
@@ -191,7 +212,7 @@
     .movie-details h1 { font-size: 1.7em; }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 435px) {
     .actors,
     .collection-movies{
         justify-items: center;
