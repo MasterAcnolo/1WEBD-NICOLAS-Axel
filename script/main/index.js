@@ -65,11 +65,12 @@ loadMoreButton.addEventListener("auxclick", e => e.preventDefault());
 
 searchBarInput.addEventListener("input", function(){
     let value = searchBarInput.value
-    
     localStorage.setItem("INDEX-SEARCH", value);
 })
 
 searchBarButton.addEventListener("click", function(){
+    let value = searchBarInput.value
+    localStorage.setItem("INDEX-SEARCH", value);
     window.location.href = "search.html"
 })
 

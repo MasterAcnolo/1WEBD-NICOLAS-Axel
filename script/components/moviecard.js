@@ -1,8 +1,7 @@
-
 import {getColor} from "../helpers/color.js"
 import { escapeHTML } from "../helpers/escapeHTML.js";
 
-function generateMovieCard(data, limit) {
+function generateMovieCard(data, limit, aos = true) {
     let htmlContent = "";
 
     if (!data || !data.results || data.results.length === 0) {
@@ -43,8 +42,10 @@ function generateMovieCard(data, limit) {
             badgeRating = `<div class="rating-badge" style="color: ${badgeColor}; border: 2px solid ${badgeColor}">${escapeHTML(note.toFixed(1))}</div>`
         }
 
+        const AOS = aos ? 'data-aos="zoom-in"' : '';
+
         htmlContent += `
-            <a href="movie.html" target="_blank" class="movie-card" id="movie-${escapeHTML(film.id)}">
+            <a href="movie.html" target="_blank" class="movie-card" id="movie-${escapeHTML(film.id)}" ${AOS}>
                 <img src="${image}" alt="${altText}" onerror="this.src='../../assets/notfound.png'">
                 ${badgeRating}
                 <h3>${altText}</h3>

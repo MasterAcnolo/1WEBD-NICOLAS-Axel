@@ -46,12 +46,12 @@
 }
 
 .movie-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) !important;; 
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     border: 2px solid rgb(102, 102, 102);
     z-index: 10;
 }
 
 .movie-card:active{
-    transform: translateY(0) scale(var(--button-movie-active-scale));
+    transform: translateY(0) scale(var(--button-movie-active-scale)) !important;
 }

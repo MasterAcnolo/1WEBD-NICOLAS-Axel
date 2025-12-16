@@ -150,7 +150,7 @@ async function generateMovieDetails(movie) {
             if (otherMovies.length > 0) {
 
                 const data = { results: otherMovies };
-                const collectionCards = generateMovieCard(data, otherMovies.length);
+                const collectionCards = generateMovieCard(data, otherMovies.length, false);
 
                 collectionHtml = `
                     <div class="collection-container" id="collection-container">
