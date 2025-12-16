@@ -1,8 +1,22 @@
+
 import {getColor} from "../helpers/color.js"
 import { escapeHTML } from "../helpers/escapeHTML.js";
 import { maxActorAmount } from "../common.js";
 import { fetchMovies } from "../services/fetch.js";
 import { generateMovieCard } from "./moviecard.js";
+
+function formatDuration(minutes) {
+
+    const hours = Math.floor(minutes / 60);
+    const mins = minutes % 60;
+
+    if (hours > 0){
+        return `${hours}h ${mins}min`;
+    } else{
+        return `${mins}min`;
+    }
+    
+}
 
 async function generateMovieDetails(movie) {
     
@@ -97,9 +111,8 @@ async function generateMovieDetails(movie) {
     // Duration
     let duration = "N/A";
     if (movie.runtime) {
-        duration = escapeHTML(movie.runtime) + " min";
+        duration = formatDuration(movie.runtime);
     }
-
 
     // Year et Release Date
     let year = "N/A";
