@@ -1,6 +1,7 @@
 // Démarrage d'AOS
 AOS.init({
-    once: true
+    once: true,
+    startEvent: 'DOMContentLoaded'
 });
 
 const searchLinks = document.querySelectorAll('a.link');
