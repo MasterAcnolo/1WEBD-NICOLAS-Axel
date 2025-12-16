@@ -5,6 +5,9 @@ footer{
     padding-top: 10vh;
     background-color: var(--footer-background-color);
     z-index: 5;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 .top-side{
