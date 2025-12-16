@@ -22,10 +22,15 @@ async function generateMovieDetails(movie) {
 
     // Backdrop
     let backdrop = '';
+    let url = ""
     if (movie.backdrop_path) {
-        const url = `https://image.tmdb.org/t/p/original${escapeHTML(movie.backdrop_path)}`;
-        backdrop = `<div class="movie-backdrop" style="background-image:url('${url}')"></div>`;
+        url = `https://image.tmdb.org/t/p/original${escapeHTML(movie.backdrop_path)}`;
+       
+    } else if (movie.poster_path){
+        url = `https://image.tmdb.org/t/p/original${escapeHTML(movie.poster_path)}`;
     }
+
+    backdrop = `<div class="movie-backdrop" style="background-image:url('${url}')"></div>`;
 
     // Poster
     let poster = "";
