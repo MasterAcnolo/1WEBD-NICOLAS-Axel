@@ -81,21 +81,11 @@
 ## Technologies utilisées
 
 <div style="display: flex; gap: 5px; flex-wrap: wrap;">
-  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
-    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-  </a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
-    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-  </a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
-    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-  </a>
-  <a href="https://www.themoviedb.org/">
-    <img src="https://img.shields.io/badge/TMDB-01D277?style=for-the-badge&logo=gitbook&logoColor=white" alt="TMDB">
-  </a>
-  <a href="https://github.com/michalsnik/aos">
-    <img src="https://img.shields.io/badge/AOS-FF6C37?style=for-the-badge&logo=gitbook&logoColor=white" alt="AOS">
-  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"></a>
+  <a href="https://www.themoviedb.org/"><img src="https://img.shields.io/badge/TMDB-01D277?style=for-the-badge&logo=gitbook&logoColor=white" alt="TMDB"></a>
+  <a href="https://github.com/michalsnik/aos"> <img src="https://img.shields.io/badge/AOS-FF6C37?style=for-the-badge&logo=gitbook&logoColor=white" alt="AOS"> </a>
 </div>
 
 ## Structure du projet
