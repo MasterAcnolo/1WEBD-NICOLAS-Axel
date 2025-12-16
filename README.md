@@ -1,5 +1,5 @@
-<div align="center">
-  <img width="80%" height="auto" alt="Logo White" src="https://github.com/user-attachments/assets/170fa69c-a814-497e-8ae2-1d2600ddf396" />
+<div align="center" width="80%">
+  <img width="100%" height="auto" alt="Logo White" src="https://github.com/user-attachments/assets/c6e639db-fbcf-4e3a-a6a3-75fc950730b2" />
   <p> 
    Movie Loader est une application web moderne permettant de rechercher, découvrir et gérer des films grâce à l'API TMDB. Elle propose une interface responsive, une expérience   utilisateur fluide et des fonctionnalités avancées comme la watchlist, les favoris, et de nombreuses optimisations UX/UI et accessibilité.
   </p>
