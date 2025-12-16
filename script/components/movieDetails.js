@@ -149,8 +149,9 @@ async function generateMovieDetails(movie) {
         classificationHTML = "<p><strong>Classification:</strong> 18+</p>";
     }
 
-    // Metascore
+    // Metascore and vote
     let metascore = "";
+    let voteCount = typeof movie.vote_count === "number" ? movie.vote_count : null;
 
     if (typeof movie.vote_average === "number") {
         if (movie.vote_average === 0) {
@@ -158,8 +159,10 @@ async function generateMovieDetails(movie) {
         } else {
             const score = Math.round(movie.vote_average * 10); // 100
             let color = getColor(score);
-
             metascore = `<span style="font-weight:400;color: ${color}">${score}</span>`;
+            if (voteCount !== null) {
+                metascore += ` <span style='color:var(--vote-count-color);font-size:0.95em' title='Number of votes'>(${voteCount} votes)</span>`;
+            }
         }
     }
 
