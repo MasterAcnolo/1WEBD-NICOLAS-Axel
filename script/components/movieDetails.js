@@ -19,7 +19,7 @@ function formatDuration(minutes) {
 }
 
 async function generateMovieDetails(movie) {
-    
+
     // Backdrop
     let backdrop = '';
     if (movie.backdrop_path) {
@@ -117,12 +117,18 @@ async function generateMovieDetails(movie) {
     // Year et Release Date
     let year = "N/A";
     let releaseDate = "N/A";
+    let releaseStatus = "";
 
     if (movie.release_date) {
         const date = new Date(movie.release_date);
+        const now = new Date();
 
         year = date.getFullYear();
         releaseDate = date.toLocaleDateString("en-US");
+        
+        if (date > now){
+            releaseStatus = '<span class="badge-not-out">Not Out Yet</span>';
+        }
     }
 
 
@@ -209,7 +215,7 @@ async function generateMovieDetails(movie) {
 
                     <p><strong>Duration:</strong> ${duration}</p>
 
-                    <p><strong>Release date:</strong> ${releaseDate}</p>
+                    <p><strong>Release date:</strong> ${releaseDate} ${releaseStatus}</p>
 
                     <p><strong>Director:</strong> ${director}</p>
 

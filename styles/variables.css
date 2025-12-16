@@ -34,6 +34,8 @@ Available Fonts:
     --movie-details-background-color: rgba(26, 26, 26, 0.463);
     --actors-card-background-color: #55555579;
 
+    --not-out-color: #e33100e5;
+
     /* Search Bar */
     --searchbar-bg: rgb(229, 229, 229);
     --searchbar-text-color: rgb(44, 44, 44);
