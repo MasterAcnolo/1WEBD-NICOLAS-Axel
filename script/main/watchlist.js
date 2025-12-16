@@ -24,10 +24,12 @@ async function renderMovieList(ids, container, emptyMessage) {
 
 function createMovieCard(movie) {
     const card = document.createElement("a");
+    
     card.href = "movie.html";
     card.className = "movie-card";
     card.id = `movie-${movie.id}`;
-    card.setAttribute("data-aos", "zoom-in");
+    card.style.opacity = "0";
+    card.style.animation = "fadeIn 0.5s ease 0.25s forwards";
 
     const poster = movie.poster_path ? `https://image.tmdb.org/t/p/w500/${escapeHTML(movie.poster_path)}` : "../../assets/notfound.png";
     const title = movie.title ? escapeHTML(movie.title) : "Unknown";

@@ -1,7 +1,8 @@
 // Démarrage d'AOS
 AOS.init({
     once: true,
-    startEvent: 'DOMContentLoaded'
+    startEvent: 'DOMContentLoaded',
+    duration: 900, // Default Duration
 });
 
 const searchLinks = document.querySelectorAll('a.link');
