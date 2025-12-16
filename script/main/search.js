@@ -7,7 +7,7 @@ const outputContainer = document.getElementById("search-container");
 const resultsInfo = document.getElementById("results-info");
 const endZone = document.getElementById("end-message");
 
-// État interne
+// Intern State
 let currentQuery = "";
 let currentPage = 1;
 let totalPages = 1;
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (isLoading) return;
 
-        // Nouvelle recherche = reset
+        // new search = reset
         currentQuery = query;
         currentPage = 1;
         totalPages = 1;
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         runSearch(currentQuery, currentPage);
     });
 
-    // Scroll infini
+    // infitine scroll
     window.addEventListener("scroll", infiniteScroll);
 });
 

@@ -8,7 +8,7 @@ function setupHamburger() {
     const hamburgerMenu = document.getElementById("hamburger-menu");
 
     hamburgerIcon.addEventListener("click", function () {
-        isActive = !isActive;
+        isActive = !isActive; // toggle
 
         // fade out
         hamburgerIcon.style.transition = "opacity 0.3s ease";

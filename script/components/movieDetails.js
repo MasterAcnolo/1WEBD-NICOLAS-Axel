@@ -161,7 +161,7 @@ async function generateMovieDetails(movie) {
             let color = getColor(score);
             metascore = `<span style="font-weight:400;color: ${color}">${score}</span>`;
             if (voteCount !== null) {
-                metascore += ` <span style='color:var(--vote-count-color);font-size:0.95em' title='Number of votes'>(${voteCount} votes)</span>`;
+                metascore += ` <span style='color:var(--vote-count-color);font-size:0.95em''>(${voteCount} votes)</span>`;
             }
         }
     }
