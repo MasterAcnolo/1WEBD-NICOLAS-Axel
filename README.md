@@ -6,28 +6,54 @@
  
 </div>
 
-## Fonctionnalités
+---
 
-- **Recherche de films** : Trouvez rapidement des films par titre avec une barre de recherche .
-- **Sauvegarde de la recherche** : La dernière requête de recherche est conservée automatiquement (localStorage).
-- **Découverte** : Parcourez les tendances et découvrez de nouveaux films.
-- **Détails complets** : Affichage détaillé d'un film (affiche, synopsis, casting, réalisateur, durée, note, box office, date de sortie formatée, etc.).
-- **Affichage du nombre de résultats** et message de fin de liste lors de la recherche.
-- **Infinite scroll** : Chargement automatique de nouveaux résultats lors du scroll sur la page de recherche.
-- **Watchlist** : Ajoutez/retirez des films à votre liste de visionnage, avec gestion locale et affichage dynamique.
-- **Favoris** : Marquez/démarquez vos films préférés.
-- **Animations** : Apparition fluide des cards et des conteneurs (fade/slide), transitions modernes.
-- **Loader animé** : Affichage d'un loader/spinner lors des chargements.
-- **Responsive** : Interface adaptée à tous les écrans (mobile, tablette, desktop).
-- **Menu Hamburger** : Pour une meilleure navigation sur mobile.
-- **Accessibilité avancée** :
-  - Navigation clavier et focus visible
-  - Aria-live pour les résultats dynamiques
-  - Balises alt sur toutes les images
-  - Contrastes et structure sémantique
-- **Gestion des erreurs** : Fallback d’images, messages d’erreur utilisateur.
-- **Sécurité** : Échappement systématique des données dynamiques (XSS).
-- **Composants réutilisables** : Cards, détails, helpers, etc.
+## Fonctionnalités principales
+
+### Recherche & découverte
+
+- **Recherche** rapide de films par titre
+- **Conservation automatique** de la dernière recherche (localStorage)
+- **Découverte** des films tendances
+- **Affichage du nombre de résultats** et message de fin de liste
+- **Scroll infini** sur les pages de recherche
+- **Buffer** : Pour ne faire des requêtes que si besoin est
+
+### Détails des films
+
+- Page de détails complète :
+  - affiche, synopsis, genres
+  - casting et réalisateur
+  - durée, note, metascore
+  - box office
+  - date de sortie formatée
+- Gestion des images manquantes (fallback)
+- Données sécurisées (échappement XSS)
+
+### Watchlist & favoris
+
+- Ajout / suppression de films dans la watchlist
+- Système de favoris
+- Persistance locale
+- Mise à jour dynamique de l’UI
+
+### UX / UI
+
+- Animations d’apparition des cards et sections
+- Loader animé lors des chargements
+- Transitions modernes
+- Menu hamburger pour mobile
+- Interface totalement responsive (mobile, tablette, desktop)
+
+### Accessibilité
+
+- Navigation clavier complète
+- Focus visible
+- Attributs `aria` et `aria-live` pour le contenu dynamique
+- Balises `alt` sur toutes les images
+- Structure HTML sémantique et contrastes respectés
+
+---
 
 ## Installation
 
@@ -49,12 +75,16 @@
 3. **Lancer le projet**
    - Ouvrez `index.html` dans votre navigateur (ou servez le dossier avec un serveur local pour éviter les problèmes CORS).
 
+---
+
 ## Utilisation
 
 - **Accueil** : Affiche les films tendances et la section découverte.
 - **Recherche** : Permet de rechercher un film par titre ou acteur, avec expérience enrichie (clear, focus, scroll infini, feedback visuel).
-- **Détails** : Cliquez sur un film pour voir sa fiche détaillée (infos enrichies, date formatée, casting, etc.).
+- **Détails** : Cliquez sur un film pour voir sa fiche détaillée (infos enrichies, date formatée, casting, etc...).
 - **Watchlist/Favoris** : Ajoutez/retirez des films à votre watchlist ou favoris via les boutons dédiés, possibilité de réordonner la watchlist (si activé).
+
+---
 
 ## Technologies utilisées
 
@@ -63,11 +93,25 @@
 - **API TMDB**
 - **AOS (Animate On Scroll)** pour les animations d’apparition
 
+---
+
+## Structure du projet
+
+- `script/components/` : composants UI réutilisables (cards, détails, etc.)
+- `script/helpers/` : helpers utilitaires (sécurité, formatage, couleurs)
+- `script/services/` : appels API et logique de récupération des données
+- `styles/` : styles globaux, variables et composants
+- `assets/` : images et ressources statiques
+
+---
+
 ## Personnalisation
 
 - **Palette de couleurs** et polices personnalisables dans `styles/variables.css`.
-- **Composants réutilisables** dans `script/components/`.
-- **Ajout de nouvelles pages** possible en suivant la structure existante.
+- **Composants réutilisables** dans `script/components/` ainsi que dans `styles/components/`.
+- **Ajout de nouvelles pages** possible en suivant la structure existante et les composants réutilisables.
+
+---
 
 ## Bonnes pratiques
 
@@ -76,6 +120,8 @@
 - Responsive design et accessibilité (balises alt, aria, focus, contrastes).
 - Centralisation des constantes et variables partagées.
 - Respect des standards UX/UI modernes.
+
+---
 
 ## Licence
 
