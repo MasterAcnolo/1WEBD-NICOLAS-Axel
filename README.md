@@ -112,4 +112,4 @@
 
 ## Licence
 
-Ce projet est open-source.
+Ce projet est open-source sous licence [GPL v3](https://www.gnu.org/licenses/gpl-3.0.html).
