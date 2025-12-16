@@ -91,8 +91,10 @@
 ## Structure du projet
 
 - `script/components/` : composants UI réutilisables (cards, détails, etc.)
+- `script/main/` : Fichier principaux par pages
 - `script/helpers/` : helpers utilitaires (sécurité, formatage, couleurs)
 - `script/services/` : appels API et logique de récupération des données
+- `script/common.js` : Fichier de configuration global
 - `styles/` : styles globaux, variables et composants
 - `assets/` : images et ressources statiques
 
