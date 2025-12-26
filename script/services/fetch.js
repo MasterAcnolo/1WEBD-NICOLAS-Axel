@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:7070/api/movies";
+const BASE_URL = "https://master-api-one.vercel.app/api/movies";
 
 async function fetchMovies(TYPE, ARGS = "", PAGE = 1) {
   const params = new URLSearchParams({
