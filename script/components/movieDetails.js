@@ -37,7 +37,7 @@ async function generateMovieDetails(movie) {
     if (movie.poster_path) {
         poster = "https://image.tmdb.org/t/p/w500" + escapeHTML(movie.poster_path);
     } else {
-        poster = "../../assets/notfound.png";
+        poster = "https://masteracnolo.github.io/1WEBD-NICOLAS-Axel/assets/notfound.png";
     }
 
     // Genres
@@ -67,7 +67,7 @@ async function generateMovieDetails(movie) {
         topActors.forEach(actor => {
             const pic = actor.profile_path 
                 ? `https://image.tmdb.org/t/p/w185${escapeHTML(actor.profile_path)}` 
-                : "../../assets/person-notfound.png";
+                : "https://masteracnolo.github.io/1WEBD-NICOLAS-Axel/assets/person-notfound.png";
             const character = actor.character ? escapeHTML(actor.character) : "Unknown";
             actorsCards += `
                 <div class="actor-card">

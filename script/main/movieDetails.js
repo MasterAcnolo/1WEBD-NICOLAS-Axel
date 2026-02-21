@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         const id = parseInt(likeBtn.dataset.id, 10); // Convert Int using 10 base (security)
         const updateLikeIcon = () => {
             likeBtn.querySelector(".fav-img").src = getLikes().includes(id)
-                ? "../../assets/icon/hearth-filled.png"
-                : "../../assets/icon/heart.png";
+                ? "https://masteracnolo.github.io/1WEBD-NICOLAS-Axel/assets/icon/hearth-filled.png"
+                : "https://masteracnolo.github.io/1WEBD-NICOLAS-Axel/assets/icon/heart.png";
         };
         updateLikeIcon();
 
@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         const id = parseInt(bookBtn.dataset.id, 10);
         const updateBookmarkIcon = () => {
             bookBtn.querySelector(".book-img").src = getBookmarks().includes(id)
-                ? "../../assets/icon/bookmark-filled.png"
-                : "../../assets/icon/bookmark.png";
+                ? "https://masteracnolo.github.io/1WEBD-NICOLAS-Axel/assets/icon/bookmark-filled.png"
+                : "https://masteracnolo.github.io/1WEBD-NICOLAS-Axel/assets/icon/bookmark.png";
         };
         updateBookmarkIcon();
 

@@ -22,7 +22,7 @@ function generateMovieCard(data, limit, aos = true) {
 
         let image = film.poster_path ? `https://image.tmdb.org/t/p/w500/${escapeHTML(film.poster_path)}` : "../../assets/notfound.png";
         if (!image || image === "N/A") {
-            image = "../../assets/notfound.png";
+            image = "https://masteracnolo.github.io/1WEBD-NICOLAS-Axel/assets/notfound.png";
         }
 
         // Year
